@@ -15,7 +15,7 @@ export default {
         heroColor: "var(--heroColor)"
       },
       fontFamily: {
-        // wix: "var(--font-wix), sans-serif",
+         wixMadefor: ['var(--font-wix-madefor)'],
         farro: "var(--font-farro), sans-serif",
       },
     },

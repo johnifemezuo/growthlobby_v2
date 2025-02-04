@@ -1,6 +1,6 @@
 import { Layout } from "@/components/Layout/Layout";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Farro,} from "next/font/google";
+import { Geist, Geist_Mono, Farro, Wix_Madefor_Display} from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,11 +17,12 @@ const farro = Farro({
   subsets: ["latin"],
   weight: ["400", "700"], 
 });
-// const wixMadeforDisplay = Wix_Madefor_Display({
-//   subsets: ["latin"],
-//   variable: "--font-wix",
-//   weight: ["400", "500", "600", "700"], 
-// });
+const wixMadefor = Wix_Madefor_Display({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-wix-madefor', 
+});
 
 
 export const metadata: Metadata = {
@@ -37,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${farro.variable}  antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${farro.variable} ${wixMadefor.variable}  antialiased`}
       >
         <Layout>{children}</Layout>
       </body>
