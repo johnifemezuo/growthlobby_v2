@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Footer } from "../UI/Footer/Footer";
-import Nav from "../UI/Navbar/Nav";
+import Nav from "../UI/NavbarMain/Nav";
 
 export const Layout = ({ children }: { children?: React.ReactNode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,12 +22,12 @@ export const Layout = ({ children }: { children?: React.ReactNode }) => {
   }, []);
 
   return (
-    <div>
+    <div >
       <Nav />
       {children}
       {/* <Footer /> */}
 
-      <Link href="#top">
+      {/* <Link href="#top">
         <div
           className={`${
             isScrolled ? "block" : "hidden"
@@ -42,7 +42,7 @@ export const Layout = ({ children }: { children?: React.ReactNode }) => {
             <path d="M13 12V20H11V12H4L12 4L20 12H13Z"></path>
           </svg>
         </div>
-      </Link>
+      </Link> */}
     </div>
   );
 };
