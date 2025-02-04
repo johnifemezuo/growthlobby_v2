@@ -90,7 +90,7 @@ const ProcessSteps = () => {
               )}
             </button>
           </div>
-          {openIndex === index && <p className="mt-2">{step.content}</p>}
+          {openIndex === index && <p className="mt-2 ">{step.content}</p>}
         </div>
       ))}
     </div>
