@@ -72,7 +72,7 @@ const ProcessSteps = () => {
             <div>
               <span className="align-top">{step.number}</span>
               <span
-                className={`md:text-[32px] text-[28px] ml-3  ${
+                className={`md:text-[32px] text-[20px] ml-3  ${
                   openIndex === index ? "text-foreground" : ""
                 }`}
               >
