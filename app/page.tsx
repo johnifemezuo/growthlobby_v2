@@ -5,6 +5,7 @@ import ProcessSection from "@/components/Modules/Home/ProcessSection/ProcessSect
 import ServicesSection from "@/components/Modules/Home/Services/ServicesSection";
 import WorksSection from "@/components/Modules/Home/Works/WorksSection";
 import TestimonySection from "@/components/Modules/Home/Testimony/TestimonySection";
+import ContactUsSection from "@/components/Modules/Home/ContactUs/ContactUsSection";
 
 export default function Home() {
   return (
@@ -15,7 +16,9 @@ export default function Home() {
       <ProcessSection/>
       <ServicesSection />
       <WorksSection />
-      <TestimonySection/>
+      <TestimonySection />
+      <ContactUsSection/>
+      
     </div>
   );
 }
