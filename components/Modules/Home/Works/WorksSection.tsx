@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { Container } from "@/components/Container/Container";
 
 const projects = [
   {
@@ -58,7 +59,8 @@ const projects = [
 
 const WorksSection = () => {
   return (
-    <div className="container mx-auto px-4 py-16 text-foreground">
+    <Container>
+    <div className="container mx-auto px-4 md:px-0 py-16 text-foreground md:w-[90%] 2xl:w-full">
       {/* Header Section */}
       <div className="mb-12 max-w-4xl ml-auto">
         <h2 className="text-3xl font-semibold mb-4 md:text-5xl">
@@ -97,7 +99,7 @@ const WorksSection = () => {
       <div className=" mt-6 m-auto text-center md:mt-12">
         <button className="text-background p-4 md:px-6 md:py-4 bg-foreground m-auto font-semibold rounded-lg">Check our Work</button>
       </div>
-    </div>
+    </div></Container>
   );
 };
 

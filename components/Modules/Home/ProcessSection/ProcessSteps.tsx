@@ -68,7 +68,10 @@ const ProcessSteps = () => {
           key={step.number}
           className="bg-background rounded-xl md:p-4 p-2 my-4 "
         >
-          <div className=" flex justify-between  font-medium hover:text-foreground">
+          <div className=" flex justify-between  font-medium hover:text-foreground"
+          
+          onClick={() => toggleAccordion(index)}
+          >
             <div>
               <span className="align-top">{step.number}</span>
               <span
@@ -80,7 +83,6 @@ const ProcessSteps = () => {
               </span>
             </div>
             <button
-              onClick={() => toggleAccordion(index)}
               className="items-center flex  p-2 rounded-lg"
             >
               {openIndex === index ? (

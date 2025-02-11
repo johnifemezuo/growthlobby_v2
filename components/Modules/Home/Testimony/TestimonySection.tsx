@@ -58,7 +58,7 @@ const TestimonySection = () => {
         </div>
         <Container>
           {clientsProfile.map(profile => (
-            <div key={profile.id} className="container  md:px-16 py-12 gap-4 md:py-20 px-4 flex flex-col-reverse md:flex-row md:justify-between md:font-medium md:items-center md:mt-20 md:border-t border-slate-400">
+            <div key={profile.id} className="container  md:px-16 py-12 gap-4 md:py-20 px-4 flex flex-col-reverse md:flex-row md:justify-between md:font-medium md:items-center md:mt-20 md:border-t border-slate-400 mx-auto">
             <div className="flex flex-col gap-8 md:w-[50%]">
               <span className="text-primary font-bold text-2xl hidden md:block">
                   {profile.id}

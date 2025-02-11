@@ -31,7 +31,7 @@ const ContactUsSection = () => {
     
       return (
         <Container className="md:mt-24 ">
-        <div className=" mx-auto p-6 md:p-12 min-h-screen h-auto">
+        <div className=" mx-auto p-6 md:p-12 min-h-screen h-auto xl:min-h-[80vh]">
           <div className="text-center mb-12">
             <p className="text-sm text-calm mb-2 md:mb-6">Contact Us</p>
             <h1 className="text-4xl md:text-5xl font-normal mb-8">

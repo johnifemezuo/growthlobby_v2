@@ -6,6 +6,7 @@ import ServicesSection from "@/components/Modules/Home/Services/ServicesSection"
 import WorksSection from "@/components/Modules/Home/Works/WorksSection";
 import TestimonySection from "@/components/Modules/Home/Testimony/TestimonySection";
 import ContactUsSection from "@/components/Modules/Home/ContactUs/ContactUsSection";
+import  Footer  from "@/components/UI/Footer/Footer";
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
       <WorksSection />
       <TestimonySection />
       <ContactUsSection/>
-      
+      <Footer/>
     </div>
   );
 }
