@@ -44,16 +44,16 @@ import Image from "next/image";
       </div>
 
       <div className="flex md:justify-end space-x-4 mt-4 md:mt-0 md:text-4xl text-2xl md:self-end">
-        <Link href="https://linkedin.com" className="text-black" aria-label="LinkedIn">
+        <Link href="https://linkedin.com" className="text-black hover:text-blue-800" aria-label="LinkedIn">
           <FaLinkedin />
         </Link>
-        <Link href="https://facebook.com" className="text-black" aria-label="Facebook">
+        <Link href="https://facebook.com" className="text-black hover:text-blue-700" aria-label="Facebook">
           <FaFacebook />
         </Link>
-        <Link href="https://instagram.com" className="text-black" aria-label="Instagram">
+        <Link href="https://instagram.com" className="text-black hover:text-pink-800" aria-label="Instagram">
           <FaInstagram />
         </Link>
-        <Link href="https://twitter.com" className="text-black" aria-label="Twitter">
+        <Link href="https://twitter.com" className="text-black hover:text-blue-500" aria-label="Twitter">
           <FaTwitter />
         </Link>
       </div>

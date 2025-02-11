@@ -6,12 +6,12 @@ import Image from "next/image";
 
 const HeroSectionMain = () => {
   return (
-    <div className="pt-28 md:mt-12 md:pt-16 text-white bg-[#0F100D] h-fit md:px-16">
+    <div className="pt-24  md:pt-26 text-white bg-[#0F100D] my-auto md:px-16 min-h-screen h-auto">
       <Container className="">
         <div className="container mx-auto px-4 py-12 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
             {/* Left Column */}
-            <div className="space-y-6 md:col-span-3 bg-heroColor p-4 md:p-12 rounded-2xl h-full">
+            <div className="space-y-6 md:col-span-3 bg-heroColor p-4 md:p-12 rounded-2xl">
               <div className="flex-col-reverse flex md:grid md:grid-cols-4 bg-heroColor">
                 <h1 className="text-4xl md:text-6xl font-bold leading-tight md:col-span-3 ">
                   The Digital
@@ -21,19 +21,19 @@ const HeroSectionMain = () => {
                 <div className=" ">
                   <Image
                     src="/images/horse.png"
-                    alt="Google Review"
+                    alt="HorseIcon"
                     width={100}
                     height={100}
                     className="md:w-full md:h-full m-auto  w-1/2"
                   />
                 </div>
               </div>
-              <p className="text-gray-400 max-w-lg">
+              <p className="text-gray-400 max-w-lg ">
                 We believe in the power of partnerships to create strategic,
                 scalable, and commercially viable digital solutions
               </p>
               <div className="border border-gray-400 w-full"></div>
-              <div className="flex items-center justify-between space-x-6 ">
+              <div className="flex items-center justify-between space-x-6  mt-[24px] md:h-28 md:items-end">
                 <Link
                   href="/contact"
                   className=" py-3 rounded-full inline-flex items-center "
@@ -45,7 +45,7 @@ const HeroSectionMain = () => {
                     <ArrowRight />
                   </span>
                 </Link>
-                <div className="flex items-center space-x-2 ">
+                <div className="flex items-center space-x-2 md:mb-2">
                   <Image
                     src="/images/googleicon.png"
                     alt="Google Review"
@@ -53,7 +53,7 @@ const HeroSectionMain = () => {
                     height={24}
                     className=" w-16 md:w-12"
                   />
-                  <div className="flex flex-col">
+                  <div className="flex flex-col ">
                     <span className="inline-flex items-center gap-2">
                       <span className="flex text-yellow-400 flex-col">
                         {"★".repeat(5)}

@@ -12,7 +12,7 @@ export default function Nav() {
   const pathname = usePathname();
 
   return (
-    <div id="top" className=" w-full z-50 fixed top-0 inset-x-0 px-3 md:px-16 py-3 bg-[#0F100D]  ">
+    <div id="top" className=" w-full z-50 fixed -top-1 md:top-0 inset-x-0 px-3 md:px-16 py-3 bg-[#0f100de4]  ">
       <Container className="font-farro  md:mt-4  ">
         <nav className=" w-full  px-2 border-gray-400 md:border rounded-full ">
           <div className="flex h-16 items-center justify-between">
