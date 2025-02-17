@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Footer } from "../UI/Footer/Footer";
+// import { Footer } from "../UI/Footer/Footer";
 import Nav from "../UI/NavbarMain/Nav";
 
 export const Layout = ({ children }: { children?: React.ReactNode }) => {

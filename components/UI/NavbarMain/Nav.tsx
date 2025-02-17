@@ -119,7 +119,7 @@ export default function Nav() {
                     About us
                   </Link>
                   <Link
-                    href="/work"
+                    href="/works"
                     className={` text-2xl py-2 hover:text-primary transition-all ${
                       pathname === "/work" ? "text-primary" : "text-zinc-500"
                     }`}
