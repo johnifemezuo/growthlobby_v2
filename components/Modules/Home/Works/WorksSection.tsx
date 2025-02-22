@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Container } from "@/components/Container/Container";
+import Link from "next/link";
 
 const projects = [
   {
@@ -96,8 +97,11 @@ const WorksSection = () => {
           </div>
         ))}
       </div>
-      <div className=" mt-6 m-auto text-center md:mt-12">
-        <button className="text-background p-4 md:px-6 md:py-4 bg-foreground m-auto font-semibold rounded-lg">Check our Work</button>
+        <div className=" mt-6 m-auto text-center md:mt-12">
+          <Link href='/works'>
+          <button className="text-background p-4 md:px-6 md:py-4 bg-foreground m-auto font-semibold rounded-lg">Check our Work</button>
+          </Link>
+      
       </div>
     </div></Container>
   );

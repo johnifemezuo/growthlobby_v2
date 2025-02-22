@@ -1,11 +1,9 @@
-"use client"
 import React from "react";
-import { Container } from "@/components/Container/Container";
-import Image from "next/image";
-import Cube from "@/public/images/image.png";
 import StackStatistics from "@/components/HeroItems/StackStatistics";
 import HeroCaroselDesc from "@/components/HeroItems/HeroCaroselDesc";
-
+import Image from "next/image";
+import { Container } from "@/components/Container/Container";
+import Brand from "@/public/images/brand.png"
 
 const HeroSection = () => {
   return (
@@ -15,12 +13,12 @@ const HeroSection = () => {
           <div className="space-y-6 md:col-span-3 bg-heroColor p-4 md:p-12 rounded-2xl mx-3 md:mx-0 m-auto">
             <div className=" flex flex-col-reverse md:flex-row md:justify-between">
               <div className="text-4xl font-bold md:text-7xl text-center md:text-left">
-                <p>OUR</p>
-                <p>BEST WORKS</p>
+                <p>We empower brands to</p>
+                <p> succeed in digital</p>
               </div>
               <div className="">
                 <Image
-                  src={Cube}
+                  src={Brand}
                   width={200}
                   height={200}
                   alt="Our-Work-Logo"
@@ -28,11 +26,11 @@ const HeroSection = () => {
                 />
               </div>
             </div>
-           <StackStatistics/>
+            <StackStatistics />
           </div>
         </Container>
       </div>
-      <HeroCaroselDesc/>
+      <HeroCaroselDesc />
     </div>
   );
 };

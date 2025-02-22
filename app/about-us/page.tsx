@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import HeroSection from "@/app/about-us/HeroSection/HeroSection";
 
 const AboutUsePage = () => {
   return (
-    <div>AboutUsePage</div>
-  )
-}
+    <>
+      <HeroSection />
+      
+    </>
+  );
+};
 
-export default AboutUsePage
+export default AboutUsePage;

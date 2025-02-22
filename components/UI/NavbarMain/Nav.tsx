@@ -39,9 +39,9 @@ export default function Nav() {
                 WORKS
               </Link>
               <Link
-                href="/about"
+                href="/about-us"
                 className={` lg:text-lg hover:text-primary transition-all ${
-                  pathname === "/about" ? "text-primary" : "text-zinc-500"
+                  pathname === "/about-us" ? "text-primary" : "text-zinc-500"
                 }`}
               >
                 ABOUT US
@@ -110,9 +110,9 @@ export default function Nav() {
                     Services
                   </Link>
                   <Link
-                    href="/about"
+                    href="/about-us"
                     className={` text-2xl py-2 hover:text-primary transition-all ${
-                      pathname === "/about" ? "text-primary" : "text-zinc-500"
+                      pathname === "/about-us" ? "text-primary" : "text-zinc-500"
                     }`}
                     onClick={() => setIsOpen(false)}
                   >
