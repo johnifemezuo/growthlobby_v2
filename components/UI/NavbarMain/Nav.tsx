@@ -48,9 +48,9 @@ export default function Nav() {
               </Link>
            
               <Link
-                href="#contact"
+                href="contact-us"
                 className={` lg:text-lg hover:text-primary transition-all ${
-                  pathname === "#contact" ? "text-primary" : "text-zinc-500"
+                  pathname === "/contact-us" ? "text-primary" : "text-zinc-500"
                 }`}
               >
                 CONTACT US
@@ -128,9 +128,9 @@ export default function Nav() {
                     Our Work
                   </Link>
                   <Link
-                    href="#contact"
+                    href="contact-us"
                     className={` text-2xl py-2 hover:text-primary transition-all ${
-                      pathname === "#contact" ? "text-primary" : "text-zinc-500"
+                      pathname === "/contact-us" ? "text-primary" : "text-zinc-500"
                     }`}
                     onClick={() => setIsOpen(false)}
                   >
