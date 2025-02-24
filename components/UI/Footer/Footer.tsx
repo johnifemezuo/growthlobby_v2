@@ -1,188 +1,70 @@
 import { Container } from "../../Container/Container";
-import { ArrowRight } from "../../Icons/ArrowRight";
-import { EmailIcon } from "../../Icons/EmailIcon";
-import { PhoneIcon } from "../../Icons/PhoneIcon";
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+
 import Link from "next/link";
+import Image from "next/image";
 
-export const Footer = () => {
-  return (
-    <footer className="bg-[#1A1A1A] text-white py-16 px-6">
-      <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12">
-          <div className="space-y-6 :w-[400px]">
-              <img
-                src="/images/aleodev-white.png"
-                alt=""
-                className="w-[140px] lg:w-40"
-              />
 
-            <p className="text-gray-300 text-sm w-full">
-            Aleodev LTD is a leading software development company headquartered in Kenya, dedicated to delivering world-class technological solutions to businesses and organizations around the globe. With innovation at the core of our operations, we pride ourselves on transforming complex challenges into powerful, user-friendly software that drives growth and success.
-            </p>
-            <button className="space-x-4 py-2 px-3 flex justify-items-center items-center rounded-full justify-center bg-transparent border hover:bg-primary/40 text-white">
-              <span className="pl-2 text-lg">Get In touch with ush</span>
-              <span className="rounded-full w-9 h-9 place-content-center grid bg-transparent border ">
-                <ArrowRight className="text-white " />
-              </span>
-            </button>
+ const Footer = () => {
+
+    const menuItems = [
+      { label: 'Homepage', href: '/' },
+      { label: 'About us', href: '/about' },
+      { label: 'Services', href: '/services' },
+      { label: 'Our Work', href: '/work' },
+      { label: 'Client Stories', href: '/clients' },
+      { label: "Let's Connect", href: '/connect' },
+    ];
+  
+    return (
+      <footer className="  p-6 relative ">
+        <Container>
+        <div className="max-w-7xl mx-auto bg-[#EDEDED] min-h-fit h-auto md:py-12 md:px-4 py-8 px-4 rounded-3xl space-y-8 mb-6 md:mb-12">
+        <nav className="flex flex-col md:grid md:grid-cols-3 md:items-start md:gap-4 p-6">
+      <div className="w-full md:self-start">
+        <Image
+          width={100}
+          height={100}
+          src="/images/logo1.png"
+          className="w-[48px] lg:w-20"
+          alt="Growthlobby"
+        />
+      </div>
+
+      <div className="flex flex-col w-full mt-4 md:mt-0 space-y-4 md:space-y-6 text-foreground font-medium">
+        {menuItems.map((item) => (
+          <Link
+            key={item.label}
+            href={item.href}
+            className="text-foreground hover:text-primary text-xl md:text-4xl md:text-center"
+          >
+            {item.label}
+          </Link>
+        ))}
+      </div>
+
+      <div className="flex md:justify-end space-x-4 mt-4 md:mt-0 md:text-4xl text-2xl md:self-end">
+        <Link href="https://linkedin.com" className="text-black hover:text-blue-800" aria-label="LinkedIn">
+          <FaLinkedin />
+        </Link>
+        <Link href="https://facebook.com" className="text-black hover:text-blue-700" aria-label="Facebook">
+          <FaFacebook />
+        </Link>
+        <Link href="https://instagram.com" className="text-black hover:text-pink-800" aria-label="Instagram">
+          <FaInstagram />
+        </Link>
+        <Link href="https://twitter.com" className="text-black hover:text-blue-500" aria-label="Twitter">
+          <FaTwitter />
+        </Link>
+      </div>
+    </nav>
+          
+          <div className=" ">
+            <h1 className="text-gray-300 text-5xl sm:text-6xl md:text-[168px] text-center font-bold">Growthlobby</h1>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {/* Services */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold uppercase tracking-wider">
-                Services
-              </h3>
-              <ul className="space-y-3">
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-300 hover:text-primary"
-                  >
-                    Branding
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-300 hover:text-primary"
-                  >
-                    Website Design
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-300 hover:text-primary"
-                  >
-                    Search Engine Optimization
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-300 hover:text-primary"
-                  >
-                    E-Commerce
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-300 hover:text-primary"
-                  >
-                    Product design
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Company */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold uppercase tracking-wider">
-                Company
-              </h3>
-              <ul className="space-y-3">
-                <li>
-                  <Link
-                    href="/work"
-                    className="text-gray-300 hover:text-primary"
-                  >
-                    Our Work
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="text-gray-300 hover:text-primary"
-                  >
-                    Contact us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/about"
-                    className="text-gray-300 hover:text-primary"
-                  >
-                    About us
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Contact */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold uppercase tracking-wider">
-                Company
-              </h3>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-2">
-                  <span className="text-[#B88746]">
-                    <PhoneIcon />
-                  </span>
-                  <a
-                    href="tel:+2347042443344"
-                    className="text-gray-300 hover:text-primary"
-                  >
-                     +254 701 913289
-                  </a>
-                </li>
-
-                <li className="flex items-center gap-2">
-                  <span className="text-[#B88746]">
-                    <PhoneIcon />
-                  </span>
-                  <a
-                    href="tel:+2347042443344"
-                    className="text-gray-300 hover:text-primary"
-                  >
-                     +254 707 420256 
-                  </a>
-                </li>
-
-                <li className="flex items-center gap-2">
-                  <span className="text-[#B88746]">
-                    <EmailIcon />
-                  </span>
-                  <a
-                    href="mailto:admin@aleodev.agency"
-                    className="text-gray-300 hover:text-primary"
-                  >
-                     info@aleodev.com
-                  </a>
-                </li>
-              </ul>
-              {/* Social Links */}
-              <div className="flex gap-4 pt-4">
-                <Link href="#" className="text-[#B88746] hover:text-primary">
-                  <Linkedin className="w-6 h-6" />
-                  <span className="sr-only">LinkedIn</span>
-                </Link>
-                <Link href="#" className="text-[#B88746] hover:text-primary">
-                  <Instagram className="w-6 h-6" />
-                  <span className="sr-only">Instagram</span>
-                </Link>
-                <Link href="#" className="text-[#B88746] hover:text-primary">
-                  <Facebook className="w-6 h-6" />
-                  <span className="sr-only">Facebook</span>
-                </Link>
-                <Link href="#" className="text-[#B88746] hover:text-primary">
-                  <Twitter className="w-6 h-6" />
-                  <span className="sr-only">Twitter</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Copyright */}
-        <div className="border-t border-gray-800 mt-16 pt-8">
-          <p className="text-sm text-gray-400">
-            © Copyright 2024 ALEODEV. All Rights Reserved.
-          </p>
-        </div>
-      </Container>
-    </footer>
+        </div></Container>
+      </footer>
   );
 };
+
+export default Footer

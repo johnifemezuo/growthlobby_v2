@@ -1,6 +1,6 @@
 import { Layout } from "@/components/Layout/Layout";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Farro, Wix_Madefor_Display} from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,6 +12,18 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+const farro = Farro({
+  variable: "--font-farro",
+  subsets: ["latin"],
+  weight: ["400", "700"], 
+});
+const wixMadefor = Wix_Madefor_Display({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-wix-madefor', 
+});
+
 
 export const metadata: Metadata = {
   title: "Growthlobby : Design + Code Agency",
@@ -26,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${farro.variable} ${wixMadefor.variable}  antialiased`}
       >
         <Layout>{children}</Layout>
       </body>

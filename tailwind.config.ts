@@ -12,6 +12,12 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: "var(--primary)",
+        heroColor: "var(--heroColor)",
+        calm: "var(--textColor)"
+      },
+      fontFamily: {
+         wixMadefor: ['var(--font-wix-madefor)'],
+        farro: "var(--font-farro), sans-serif",
       },
     },
   },
