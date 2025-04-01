@@ -1,7 +1,7 @@
-import { Layout } from "@/components/Layout/Layout";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Farro, Wix_Madefor_Display} from "next/font/google";
 import "./globals.css";
+import { PageLayout } from "@/components/Layout/PageLayout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,7 +40,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${farro.variable} ${wixMadefor.variable}  antialiased`}
       >
-        <Layout>{children}</Layout>
+        <PageLayout>{children}</PageLayout>
       </body>
     </html>
   );

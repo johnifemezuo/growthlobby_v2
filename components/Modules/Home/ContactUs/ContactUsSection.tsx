@@ -35,13 +35,13 @@ const ContactUsSection = () => {
           <div className="text-center mb-12">
             <p className="text-sm text-calm mb-2 md:mb-6">Contact Us</p>
             <h1 className="text-4xl md:text-5xl font-normal mb-8">
-              Let's <span className="text-calm">Collaborate</span>
+              Let&apos;s <span className="text-calm">Collaborate</span>
             </h1>
           </div>
     
           <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
             <div className="flex flex-col md:flex-row md:items-baseline space-y-2 md:space-y-0 ">
-              <label className="text-xl md:text-3xl text-foreground">My name is</label>
+              <label htmlFor="Name" className="text-xl md:text-3xl text-foreground">My name is</label>
               <input
                 type="text"
                 placeholder="First and last name"
@@ -49,7 +49,7 @@ const ContactUsSection = () => {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               />
-              <label className="text-xl md:text-3xl text-foreground">and I'm interested in</label>
+              <label  className="text-xl md:text-3xl text-foreground">and I&apos;m interested in</label>
               <input
                 type="text"
                 placeholder="service name"
@@ -91,7 +91,7 @@ const ContactUsSection = () => {
             </div>
     
             <div className="flex flex-col md:flex-row md:items-baseline space-y-2 md:space-y-0">
-              <label className="text-xl md:text-3xl text-gray-800">Optionally, I'm sharing more:</label>
+              <label className="text-xl md:text-3xl text-gray-800">Optionally, I&apos;m sharing more:</label>
               <input
                 type="text"
                 placeholder="your project details"

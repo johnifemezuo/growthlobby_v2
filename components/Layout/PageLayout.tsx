@@ -1,28 +1,26 @@
 "use client";
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
 // import { Footer } from "../UI/Footer/Footer";
 import Nav from "../UI/NavbarMain/Nav";
 
-export const Layout = ({ children }: { children?: React.ReactNode }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
+export const PageLayout = ({ children }: { children?: React.ReactNode }) => {
+  // const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 50) {
+  //       setIsScrolled(true);
+  //     } else {
+  //       setIsScrolled(false);
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   return (
-    <div >
+    <div>
       <Nav />
       {children}
       {/* <Footer /> */}

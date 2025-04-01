@@ -67,7 +67,7 @@ const WorksSection = () => {
         <h2 className="text-3xl font-semibold mb-4 md:text-5xl">
           From breakthrough <span className="text-calm">innovations</span>{" "}
           to industry-shaping <span className="text-calm">growth</span>, our
-          clients are changing the game—and we're proud to be part of their
+          clients are changing the game—and we&apos;re proud to be part of their
           journey.
         </h2>
       </div>
