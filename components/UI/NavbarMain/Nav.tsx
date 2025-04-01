@@ -1,6 +1,4 @@
-import { Container } from "../../Container/Container";
 // import { AnimatePresence, motion } from "framer-motion";
-import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -12,137 +10,161 @@ export default function Nav() {
   const pathname = usePathname();
 
   return (
-    <div id="top" className=" w-full z-50 fixed -top-1 md:top-0 inset-x-0 px-3 md:px-16 py-3 bg-[#0f100de4]  ">
-      <Container className="font-farro  md:mt-4  ">
-        <nav className=" w-full  px-2 border-gray-400 md:border rounded-full ">
-          <div className="flex h-16 items-center justify-between">
-            {/* Logo */}
-            <Link href="/" className="flex items-center space-x-2 ">
-              <Image
-                width={100}
-                height={100}
-                src="/images/logo1.png"
-                className="w-[40px] lg:w-10"
-                alt="Growthlobby"
-              />
-              <span className="text-white md:text-xl text-lg">GrowthLobby</span>
-            </Link>
+    <div
+      id="top"
+      className=" lg:w-[730px] lg:bg-transparent bg-white/10 lg:backdrop-blur-none backdrop-blur-md lg:border-none border-none lg:border  justify-center w-full  mx-auto z-50 fixed  inset-x-0 px-3  py-3 lg:py-5  "
+    >
+      <div className="flex  h-16 items-center justify-between space-x-4 md:space-x-6 md:justify-between">
+        {/* Logo */}
+        <Link
+          href="/"
+          className="flex border md:border items-center space-x-2 px-2 lg:p-4 bg-white/10 rounded-xl backdrop-blur-md  h-14 lg:h-16"
+        >
+          <Image
+            width={100}
+            height={100}
+            src="/images/logo1.png"
+            className="w-[40px] lg:w-10"
+            alt="Growthlobby"
+          />
+          {/* <span className="text-white md:text-xl text-lg">GrowthLobby</span> */}
+        </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex md:items-center md:space-x-8">
-              <Link
-                href="/works"
-                className={` lg:text-lg hover:text-primary transition-all ${
-                  pathname === "/works" ? "text-primary" : "text-zinc-500"
-                }`}
-              >
-                WORKS
-              </Link>
-              <Link
-                href="/about-us"
-                className={` lg:text-lg hover:text-primary transition-all ${
-                  pathname === "/about-us" ? "text-primary" : "text-zinc-500"
-                }`}
-              >
-                ABOUT US
-              </Link>
-           
-              <Link
-                href="contact-us"
-                className={` lg:text-lg hover:text-primary transition-all ${
-                  pathname === "/contact-us" ? "text-primary" : "text-zinc-500"
-                }`}
-              >
-                CONTACT US
-              </Link>
-            </div>
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex md:items-center md:space-x-6 pl-6 pr-2 py-2 md:border  rounded-xl bg-white/10 backdrop-blur-md">
+          <Link
+            href="/works"
+            className={`  text-white lg:text-sm font-medium hover:text-primary transition-all ${
+              pathname === "/works" ? "text-primaryActive" : "text-zinc-700"
+            }`}
+          >
+            SERVICE
+          </Link>
+          <Link
+            href="/about-us"
+            className={` lg:text-sm font-medium hover:text-primary transition-all ${
+              pathname === "/about-us" ? "text-primaryActive" : "text-zinc-700"
+            }`}
+          >
+            PRICING
+          </Link>
+          <Link
+            href="/works"
+            className={` lg:text-sm font-medium hover:text-primary transition-all ${
+              pathname === "/works" ? "text-primaryActive" : "text-zinc-700"
+            }`}
+          >
+            PROJECT
+          </Link>
+          <Link
+            href="blogs"
+            className={` lg:text-sm font-medium hover:text-primary transition-all ${
+              pathname === "/blogs" ? "text-primaryActive" : "text-zinc-700"
+            }`}
+          >
+            BLOG
+          </Link>
+          <Link
+            href="/about-us"
+            className={` lg:text-sm font-medium hover:text-primary transition-all ${
+              pathname === "/about-us" ? "text-primaryActive" : "text-zinc-700"
+            }`}
+          >
+            ABOUT US
+          </Link>
 
-            {/* Hire Us Button */}
-            <div className=" flex space-x-3">
-              <button className="text-black bg-primary rounded-3xl px-6 font-semibold md:block hidden">Hire us</button>
+            
+          <button className="text-black py-3 bg-[#C0ED0B] rounded-md px-4 text-sm font-semibold md:block hidden">
+            CONTACT US
+          </button>
+            
+        </div>
 
-              {/* Mobile Menu Button */}
-              <div onClick={() => setIsOpen(!isOpen)}>
-              <Image
-                width={100}
-                height={100}
-                src="/images/menu.png"
-                className="w-[90px] lg:w-28"
-                alt="Menu"
-              />
-              </div>
-            {/* <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="md:  bg-zinc-50  w-12 h-12 border rounded-full flex items-center justify-center"
-            >
-              <Menu className="h-8 w-8 text-dark" />
-              <span className="sr-only text-red-700">Toggle menu</span>
-            </button> */}
-            </div>
+        <div
+          onClick={() => setIsOpen(!isOpen)}
+          className=" md:hidden bg-black rounded-full w-12 h-12 grid place-content-center"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 7H20M4 12H20M4 17H20"
+              stroke="white"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+          </svg>
+        </div>
+      </div>
 
-          </div>
-
-          {/* Mobile Navigation */}
-        </nav>
-
-        <div>
-          {isOpen ? (
+      {/* Mobile Navigation */}
+      <div>
+        {isOpen ? (
+          <div className="box">
             <div
-              className="box"
-             
-            >
-              <div
-                className={` 
+              className={` 
             "absolute left-0 mt-2 right-0 top-0 z-50 rounded-xl bg-white p-8 shadow-lg transition-transform duration-200 ease-in-out md:hidden",
             ${isOpen ? "block" : "hidden"}
         `}
-              >
-                <div className="flex flex-col space-y-4">
-                  <Link
-                    href="/services"
-                    className={` text-2xl py-2 hover:text-primary transition-all ${
-                      pathname === "/services"
-                        ? "text-primary"
-                        : "text-zinc-500"
-                    }`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Services
-                  </Link>
-                  <Link
-                    href="/about-us"
-                    className={` text-2xl py-2 hover:text-primary transition-all ${
-                      pathname === "/about-us" ? "text-primary" : "text-zinc-500"
-                    }`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    About us
-                  </Link>
-                  <Link
-                    href="/works"
-                    className={` text-2xl py-2 hover:text-primary transition-all ${
-                      pathname === "/work" ? "text-primary" : "text-zinc-500"
-                    }`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Our Work
-                  </Link>
-                  <Link
-                    href="contact-us"
-                    className={` text-2xl py-2 hover:text-primary transition-all ${
-                      pathname === "/contact-us" ? "text-primary" : "text-zinc-500"
-                    }`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Contact us
-                  </Link>
-                  <Button>Hire us</Button>
-                </div>
+            >
+              <div className="flex flex-col space-y-4">
+                <Link
+                  href="/services"
+                  className={` text-2xl py-2 hover:text-primary transition-all ${
+                    pathname === "/services" ? "text-primaryActive" : "text-zinc-700"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  Services
+                </Link>
+                <Link
+                  href="/pricing"
+                  className={` text-2xl py-2 hover:text-primary transition-all ${
+                    pathname === "/pricing" ? "text-primaryActive" : "text-zinc-700"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  Pricing
+                </Link>
+                <Link
+                  href="/about-us"
+                  className={` text-2xl py-2 hover:text-primary transition-all ${
+                    pathname === "/about-us" ? "text-primaryActive" : "text-zinc-700"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  About us
+                </Link>
+                <Link
+                  href="/works"
+                  className={` text-2xl py-2 hover:text-primary transition-all ${
+                    pathname === "/work" ? "text-primaryActive" : "text-zinc-700"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  Our Work
+                </Link>
+                <Link
+                  href="blogs"
+                  className={` text-2xl py-2 hover:text-primary transition-all ${
+                    pathname === "/blogs"
+                      ? "text-primary"
+                      : "text-zinc-700"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >Blogs
+                </Link>
+
+                <Button className="space-x-4 py-4 px-4 flex justify-items-center bg-black items-center rounded-full justify-center hover:bg-primary/40 text-white border border-black">CONTACT US</Button>
               </div>
             </div>
-          ) : null}
-        </div>
-      </Container>
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 }

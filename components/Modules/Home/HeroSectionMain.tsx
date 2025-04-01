@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const HeroSectionMain = () => {
   return (
-    <div className="pt-24  md:pt-26 text-white bg-[#0F100D] my-auto md:px-16 min-h-screen h-auto">
+    <div className="pt-24  md:pt-26 text-white bg-white my-auto md:px-16 min-h-screen h-auto">
       <Container className="">
         <div className="container mx-auto px-4 py-12 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
