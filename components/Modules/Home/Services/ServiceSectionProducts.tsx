@@ -1,8 +1,7 @@
 "use client";
 
-import React from "react";
-import { useState } from "react";
 import Image from "next/image";
+import { useState } from "react";
 
 interface Product {
   id: string;
@@ -55,15 +54,20 @@ const ServiceSectionProducts = () => {
         {products.map((product) => (
           <div
             key={product.id}
-            className="flex items-center md:justify-between group flex-col-reverse md:flex-row md:border-t border-calm md:pt-6"
+            className="flex transition-all duration-500 items-center md:justify-between group flex-col-reverse md:flex-row md:border-t border-calm md:pt-6"
             onMouseEnter={() => setHoveredId(product.id)}
             onMouseLeave={() => setHoveredId(null)}
+            
           >
             <div className="space-y-2">
               <div className="flex md:w-[60%] justify-between">
-                <span className="text-primary md:text-22 hidden md:block font-semibold">{product.id}</span>
+                <h4 className="text-[var(--primary)] md:text-3xl hidden md:block font-semibold">
+                  {product.id}
+                </h4>
                 <div className="flex items-between gap-4 flex-col md:w-[60%] items-center md:items-start text-center md:text-left">
-                  <h2 className="text-calm text-2xl font-bold">{product.title}</h2>
+                  <h2 className="text-zinc-200 text-2xl font-bold">
+                    {product.title}
+                  </h2>
                   <div
                     className={`overflow-hidden transition-all duration-300 ${
                       hoveredId === product.id
@@ -71,15 +75,20 @@ const ServiceSectionProducts = () => {
                         : "md:h-0 md:opacity-0"
                     }`}
                   >
-                    <p className="text-gray-400 font-bold">{product.description1}</p>
+                    <p className="text-gray-300 font-bold">
+                      {product.description1}
+                    </p>
                     <p className="text-gray-400 ">{product.description2}</p>
                   </div>
                 </div>
               </div>
             </div>
+
             <div
               className={`relative transition-transform duration-300  ${
-                hoveredId === product.id ? "md:scale-130 md:w-72" : "md:scale-100 md:w-auto"
+                hoveredId === product.id
+                  ? "md:scale-130 md:w-72"
+                  : "md:scale-100 md:w-auto"
               }`}
             >
               <Image

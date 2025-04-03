@@ -10,11 +10,12 @@ export interface IBlog {
   title: string;
   slug: string;
   coverImage: { url: string };
-  readTime: number;
-  date: string;
-  author: IAuthor;
-  category: string;
-  details: { content: { html: string } };
+  readTime?: number;
+  date?: string;
+  author?: IAuthor;
+  category?: string;
+  details?: { content: { html: string } };
+  featured?: boolean
 }
 
 export interface IBlogData {

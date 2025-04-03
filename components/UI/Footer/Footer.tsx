@@ -3,6 +3,7 @@ import { Container } from "../../Container/Container";
 
 import Image from "next/image";
 import Link from "next/link";
+import { ScrollReveal } from "@/components/Animations/ScrollReveal";
 
 const Footer = () => {
   const menuItems = [
@@ -16,6 +17,12 @@ const Footer = () => {
 
   return (
     <footer className="  p-6 relative ">
+      <ScrollReveal
+              hidden={{ y: 100 }}
+              visible={{ y: 0 }}
+              delay={0.6}
+              duration={1}
+            >
       <Container>
         <div className="max-w-7xl mx-auto bg-[#EDEDED] min-h-fit h-auto md:py-12 md:px-4 py-8 px-4 rounded-3xl space-y-8 mb-6 md:mb-12">
           <nav className="flex flex-col md:grid md:grid-cols-3 md:items-start md:gap-4 p-6">
@@ -80,6 +87,7 @@ const Footer = () => {
           </div>
         </div>
       </Container>
+      </ScrollReveal>
     </footer>
   );
 };
