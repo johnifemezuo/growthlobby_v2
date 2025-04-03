@@ -41,9 +41,9 @@ const clientsProfile = [
 const TestimonySection = () => {
   return (
     // <Container>
-    <div className="font-wixMadefor">
-      <div className="m-auto bg-foreground text-background min-h-screen h-auto pt-12 md:pt-20">
-        <div className=" flex m-auto space-x-4 text-center md:text-7xl text-2xl justify-center font-medium items-center">
+    <div className="font-wixMadefor relative pb-20">
+      <div className="m-auto relative bg-foreground text-background min-h-screen h-auto pt-12 md:pt-20">
+        <div className=" flex sticky top-20 m-auto space-x-4 text-center md:text-7xl text-2xl justify-center font-medium items-center">
           <span className="">
             What Our <span className="text-calm">Clients</span> Are Saying
           </span>
@@ -59,10 +59,10 @@ const TestimonySection = () => {
           {clientsProfile.map((profile) => (
             <div
               key={profile.id}
-              className="container  md:px-16 py-12 gap-4 md:py-20 px-4 flex flex-col-reverse md:flex-row md:justify-between md:font-medium md:items-center md:mt-20 md:border-t border-slate-400 mx-auto"
+              className="container sticky bg-[#0A0B0B] top-60 md:px-16 py-12 gap-4 md:py-20 px-4 flex flex-col-reverse md:flex-row md:justify-between md:font-medium md:items-center md:mt-20 md:border-t border-slate-400 mx-auto"
             >
               <div className="flex flex-col gap-8 md:w-[50%]">
-                <span className="text-primary font-bold text-2xl hidden md:block">
+                <span className="text-[var(--primary)] font-bold text-2xl hidden md:block">
                   {profile.id}
                 </span>
                 <span className="text-2xl">{profile.testimony}</span>
