@@ -1,12 +1,13 @@
-// import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "../Button/Button";
+import ContactFormDropDown from "./ContactFormDropdown";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const [openContactForm, setOpenContactForm] = useState(false);
   const pathname = usePathname();
 
   return (
@@ -35,7 +36,7 @@ export default function Nav() {
           <Link
             href="/works"
             className={`  text-white lg:text-sm font-medium hover:text-primary transition-all ${
-              pathname === "/works" ? "text-primaryActive" : "text-zinc-700"
+              pathname === "/works" ? "text-primaryActive" : "text-zinc-800"
             }`}
           >
             SERVICE
@@ -43,7 +44,7 @@ export default function Nav() {
           <Link
             href="/about-us"
             className={` lg:text-sm font-medium hover:text-primary transition-all ${
-              pathname === "/about-us" ? "text-primaryActive" : "text-zinc-700"
+              pathname === "/about-us" ? "text-primaryActive" : "text-zinc-800"
             }`}
           >
             PRICING
@@ -51,7 +52,7 @@ export default function Nav() {
           <Link
             href="/works"
             className={` lg:text-sm font-medium hover:text-primary transition-all ${
-              pathname === "/works" ? "text-primaryActive" : "text-zinc-700"
+              pathname === "/works" ? "text-primaryActive" : "text-zinc-800"
             }`}
           >
             PROJECT
@@ -59,7 +60,7 @@ export default function Nav() {
           <Link
             href="blogs"
             className={` lg:text-sm font-medium hover:text-primary transition-all ${
-              pathname === "/blogs" ? "text-primaryActive" : "text-zinc-700"
+              pathname === "/blogs" ? "text-primaryActive" : "text-zinc-800"
             }`}
           >
             BLOG
@@ -67,14 +68,14 @@ export default function Nav() {
           <Link
             href="/about-us"
             className={` lg:text-sm font-medium hover:text-primary transition-all ${
-              pathname === "/about-us" ? "text-primaryActive" : "text-zinc-700"
+              pathname === "/about-us" ? "text-primaryActive" : "text-zinc-800"
             }`}
           >
             ABOUT US
           </Link>
 
             
-          <button className="text-black py-3 bg-[#C0ED0B] rounded-md px-4 text-sm font-semibold md:block hidden">
+          <button onClick={() => setOpenContactForm(true)} className="text-black py-3 bg-[#C0ED0B] rounded-md px-4 text-sm font-semibold md:block hidden">
             CONTACT US
           </button>
             
@@ -115,7 +116,7 @@ export default function Nav() {
                 <Link
                   href="/services"
                   className={` text-2xl py-2 hover:text-primary transition-all ${
-                    pathname === "/services" ? "text-primaryActive" : "text-zinc-700"
+                    pathname === "/services" ? "text-primaryActive" : "text-zinc-800"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
@@ -124,7 +125,7 @@ export default function Nav() {
                 <Link
                   href="/pricing"
                   className={` text-2xl py-2 hover:text-primary transition-all ${
-                    pathname === "/pricing" ? "text-primaryActive" : "text-zinc-700"
+                    pathname === "/pricing" ? "text-primaryActive" : "text-zinc-800"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
@@ -133,7 +134,7 @@ export default function Nav() {
                 <Link
                   href="/about-us"
                   className={` text-2xl py-2 hover:text-primary transition-all ${
-                    pathname === "/about-us" ? "text-primaryActive" : "text-zinc-700"
+                    pathname === "/about-us" ? "text-primaryActive" : "text-zinc-800"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
@@ -142,7 +143,7 @@ export default function Nav() {
                 <Link
                   href="/works"
                   className={` text-2xl py-2 hover:text-primary transition-all ${
-                    pathname === "/work" ? "text-primaryActive" : "text-zinc-700"
+                    pathname === "/work" ? "text-primaryActive" : "text-zinc-800"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
@@ -153,18 +154,19 @@ export default function Nav() {
                   className={` text-2xl py-2 hover:text-primary transition-all ${
                     pathname === "/blogs"
                       ? "text-primary"
-                      : "text-zinc-700"
+                      : "text-zinc-800"
                   }`}
-                  onClick={() => setIsOpen(false)}
                 >Blogs
                 </Link>
 
-                <Button className="space-x-4 py-4 px-4 flex justify-items-center bg-black items-center rounded-full justify-center hover:bg-primary/40 text-white border border-black">CONTACT US</Button>
+                <Button onClick={() => setOpenContactForm(true)} className="space-x-4 py-4 px-4 flex justify-items-center bg-[var(--primary)] items-center rounded-full justify-center hover:bg-primary/40 text-black font-medium hover:bg-[var(--primary)]">CONTACT US</Button>
               </div>
             </div>
           </div>
         ) : null}
       </div>
+
+     <ContactFormDropDown isOpen={openContactForm} setIsOpen={setOpenContactForm} />
     </div>
   );
 }

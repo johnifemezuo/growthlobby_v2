@@ -74,7 +74,7 @@ const WorksSection = () => {
     <Container>
       <div className="container mx-auto px-4 md:px-0 py-16 text-foreground md:w-[90%] 2xl:w-full">
         {/* Header Section */}
-         <ScrollReveal hidden={{ x: 50 }} visible={{ x: 0 }} duration={0.5}>
+         <ScrollReveal hidden={{ y: 50 }} visible={{ y: 0 }} duration={0.5}>
         <div className="mb-12 max-w-5xl ml-auto space-y-3 ">
           <h4 className="text-sm lg:text-base text-zinc-600">Our Work</h4>
           <h2 className="text-3xl font-semibold mb-4 md:text-5xl">
@@ -103,7 +103,7 @@ const WorksSection = () => {
                   fill
                   quality={100}
                   priority={true}
-                  className="object-cover "
+                  className="object-cover hover:scale-110 transition-transform duration"
                 />
               </div>
               {/* <div className="p-4">
