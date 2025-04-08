@@ -1,25 +1,24 @@
-import { ArrowRight } from "../../Icons/ArrowRight";
-import { motion } from "framer-motion";
 import React from "react";
+import { ArrowRight } from "../../Icons/ArrowRight";
 
 export const Button = ({
   children,
   className,
-}: {
+  onClick,
+  ...props // Spread other native button properties
+}: React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children: React.ReactNode;
   className?: string;
+  onClick?: (val?: boolean) => void;
 }) => {
   return (
-    <motion.button
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
-      onHoverStart={() => console.log("hover started!")}
-      className={`${className} space-x-4 py-2 px-4 flex justify-items-center bg-black items-center rounded-full justify-center hover:bg-primary/40 text-white border border-black`}
+    <button
+      onClick={onClick}
+      className={`${className} space-x-4 py-2 px-4 flex justify-items-center  items-center rounded-lg justify-center hover:bg-primary/40 text-black`}
+      {...props} // Spread native button properties here
     >
-      <span className="pl-2 lg:text-lg text-lba">{children}</span>{" "}
-      {/* <span className="rounded-full w-9 h-9 place-content-center grid bg-white ">
-      </span> */}
+      <span className="pl-2 lg:text-lg ">{children}</span>
       <ArrowRight className="text-primary" />
-    </motion.button>
+    </button>
   );
 };
