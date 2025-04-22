@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useCallback, useEffect, useState } from "react";
 
-type UseSelectedSnapDisplayType = {
-  selectedSnap: number;
-  snapCount: number;
-};
+// type UseSelectedSnapDisplayType = {
+//   selectedSnap: number;
+//   snapCount: number;
+// };
 
 
 export interface UseEmblaCarouselType {

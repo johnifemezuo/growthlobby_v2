@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "../UI/Footer/Footer";
 // import { Footer } from "../UI/Footer/Footer";
 import Nav from "../UI/NavbarMain/Nav";
 
@@ -41,6 +42,8 @@ export const PageLayout = ({ children }: { children?: React.ReactNode }) => {
           </svg>
         </div>
       </Link> */}
+<Footer/>
+
     </div>
   );
 };

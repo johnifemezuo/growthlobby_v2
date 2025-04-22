@@ -1,16 +1,17 @@
-import React from "react";
 import HeroSection from "@/components/Modules/AboutUs/HeroSection/HeroSection";
-import ContactUsSection from "@/components/Modules/Home/ContactUs/ContactUsSection";
-import Footer from "@/components/UI/Footer/Footer";
-
+import MeetTheTeam from "@/components/Modules/AboutUs/HeroSection/MeetTheTeam";
+import BrandCompany from "@/components/Modules/Home/BrandCompany/BrandCompany";
+import TestimonySection from "@/components/Modules/Home/Testimony/TestimonySection";
+import WelcomeSection from "@/components/Modules/Home/Welcome/WelcomeSection";
 
 const AboutUsePage = () => {
   return (
     <>
       <HeroSection />
-      <div className="min-h-screen h-auto"></div>
-      <ContactUsSection/>
-      <Footer/>
+      <WelcomeSection />
+      <MeetTheTeam />
+      <BrandCompany />
+      <TestimonySection />
     </>
   );
 };

@@ -1,22 +1,10 @@
 "use client";
-
-import { useCarouselFunctions } from "@/base/hooks/useCarouselfunctions";
 import { AnimatedShinyTextDemo } from "@/components/Animations/AnimatedShinyTextDemo";
 import { Container } from "@/components/Container/Container";
 import { ArrowRight } from "@/components/Icons/ArrowRight";
-import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
-import HeroCard from "./HeroCard";
-import HeroRating from "./HeroRating";
 
-const HeroSection = () => {
-  const { toggleAutoplay, emblaRef } = useCarouselFunctions();
-
-  useEffect(() => {
-    toggleAutoplay();
-  }, [toggleAutoplay]);
-
+const WorkHeroSection = () => {
   return (
     <div className="h-auto w-full relative bg-white py-20 lg:py-20  overflow-hidden">
       <svg
@@ -142,23 +130,16 @@ const HeroSection = () => {
       <Container>
         <div className="flex flex-col justify-center items-center h-full  px-5 lg:px-0">
           <div className="text-center py-8 lg:pt-20 space-y-5 max-w-[700px] mx-auto px-4 lg:px-0">
-            <AnimatedShinyTextDemo text="Elevate your Digital Presence.✨" />
+
+            <AnimatedShinyTextDemo text="WHAT WE DO BEST.✨"/>
 
             <h1 className="text-4xl max-w-2xl  mx-auto font-bold lg:text-4xl xl:text-6xl font-serif">
-              <span className="italic font-light">Design</span> &{" "}
-              <span className="italic font-light">Brand</span> <br /> partner
-              for all your business needs.
+              <span className="italic font-light">OUR PROJECTS</span> 
             </h1>
-            <p className="lg:text-lg text-zinc-700">
-              From sleek websites and responsive web apps to standout mobile
-              prototypes –we bring your ideas to life and elevate them above the
-              competition.
-            </p>
+            
           </div>
 
-          <HeroRating />
-
-          <div className="flex w-full lg:w-auto bg-white border border-zinc-100 p-2  rounded-lg flex-row items-center justify-between lg:justify-center gap-4 mt-8">
+          <div className="flex w-[350px] lg:w-auto bg-white border border-zinc-100 p-2  rounded-lg flex-row items-center justify-between lg:justify-center gap-4 ">
             <Link
               href="/book"
               className="bg-gray-900 text-center text-white px-6 text-sm py-4 rounded-md hover:bg-black transition-colors w-full sm:w-auto"
@@ -169,91 +150,14 @@ const HeroSection = () => {
               href="/pricing"
               className="flex  text-sm items-center justify-center gap-2 px-6 py-4 rounded-md hover:bg-gray-100 transition-colors w-full sm:w-auto"
             >
-              SEE PRICING <ArrowRight />
+              CONTACT US <ArrowRight />
             </Link>
           </div>
         </div>
 
-        <div className="z-0  hidden lg:flex justify-between items-center -mt-14 w-full">
-          <Image
-            src="/images/svg/ArrowDown.svg"
-            alt=""
-            height={110}
-            width={110}
-            className="w-[90px] h-[90px] hidden lg:block arrow-down"
-          />
-          <Image
-            src="/images/svg/ArrowDownLeft.svg"
-            alt=""
-            height={110}
-            width={110}
-            className="w-[90px] h-[90px] t left-20 hidden lg:block arrow-down"
-          />
-        </div>
-
-        <div className="container mx-auto px-4 lg:mt-12 py-4 lg:py-0">
-          <hr className="border-gray-300" />
-        </div>
-
-        {/* Contact Info */}
-        <section className="container mx-auto px-4 py-4">
-          <div className="flex flex-row justify-between items-start md:items-center">
-            <p className="text-xs md:text-sm text-gray-800 font-medium mb-4 md:mb-0">
-              BASED IN AWKA, NIGERIA
-            </p>
-            <p className="text-gray-800 font-medium mb-4 md:mb-0 text-sm hidden lg:block">
-              CONTACT US
-            </p>
-            <p className="text-gray-800 font-medium text-xs md:text-sm ">
-              HELLO@GROWTHLOBBY.CO
-            </p>
-          </div>
-        </section>
       </Container>
-
-      <Container>
-        {/* Portfolio Grid */}
-        <div className="w-full lg:max-w-[1560px] mx-auto ">
-          <div className="overflow-hidden w-full  px-4 lg:px-0">
-            <div className="flex px-0">
-              <div className="overflow-hidden" ref={emblaRef}>
-                <div className="flex touch-pan-y touch-pinch-zoom lg:ml-36 gap-4">
-                  {/* Portfolio Item 1 */}
-                  <HeroCard
-                    title="Paywave"
-                    image="/images/showcase1.png"
-                    category="BRAND / GRAPHIC"
-                  />
-                  <HeroCard
-                    title="Paywave"
-                    image="/images/showcase2.png"
-                    category="BRAND / GRAPHIC"
-                  />
-                  <HeroCard
-                    title="Paywave"
-                    image="/images/showcase3.png"
-                    category="BRAND / GRAPHIC"
-                  />
-                  <HeroCard
-                    title="Paywave"
-                    image="/images/showcase2.png"
-                    category="BRAND / GRAPHIC"
-                  />
-                  <HeroCard
-                    title="Paywave"
-                    image="/images/showcase3.png"
-                    category="BRAND / GRAPHIC"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Container>
-
-      {/* <HeroSample /> */}
     </div>
   );
 };
 
-export default HeroSection;
+export default WorkHeroSection;

@@ -1,195 +1,114 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
+import { IProject } from "@/base/interface/IProject";
 import { Container } from "@/components/Container/Container";
 import { useState } from "react";
+import WorkCard from "../../Home/Works/WorkCard";
+import { DropdownCategory } from "../DropdownCategory";
 
-const projects = [
-  {
-    id: 1,
-    category: "WEBSITE DESIGN",
-    title: "Asset Valuation",
-    description:
-      "Platform linking insurers with valuation services for efficient asset assessments.",
-    image: "/images/landing-page.png",
-    colSpan: "col-span-1",
-    rowSpan: "row-span-1",
-  },
-  {
-    id: 2,
-    category: "APP DESIGN",
-    title: "Somakro",
-    description:
-      "Connecting you to reliable local professionals for every task, making everyday services accessible, efficient, and trusted.",
-    image: "/images/landing-page-4.png",
-    colSpan: "col-span-2",
-    rowSpan: "row-span-2",
-  },
-  {
-    id: 3,
-    category: "DASHBOARD DESIGN",
-    title: "Somakro",
-    description:
-      "Connecting you to reliable local professionals for every task, making everyday services accessible, efficient, and trusted.",
-    image: "/images/landing-page-7.png",
-    colSpan: "col-span-2",
-    rowSpan: "row-span-2",
-  },
-  {
-    id: 4,
-    category: "APP DESIGN",
-    title: "Asset Valuation Mobile",
-    description: "Mobile-first asset management solution.",
-    image: "/images/landing-page-4.png",
-    colSpan: "col-span-1",
-    rowSpan: "row-span-1",
-  },
-  {
-    id: 5,
-    category: "DASHBOARD DESIGN",
-    title: "Asset Valuation Mobile",
-    description:
-      "Connecting you to reliable local professionals for every task, making everyday services accessible, efficient, and trusted.",
-    image: "/images/landing-page-6.png",
-    colSpan: "col-span-1",
-    rowSpan: "row-span-1",
-  },
-  {
-    id: 6,
-    category: "APP DESIGN",
-    title: "Somakro",
-    description: "Mobile application for expense tracking and budgeting.",
-    image: "/images/landing-page-5.png",
-    colSpan: "col-span-2",
-    rowSpan: "row-span-2",
-  },
-  {
-    id: 7,
-    category: "WEBSITE DESIGN",
-    title: "Asset Valuation",
-    description:
-      "Platform linking insurers with valuation services for efficient asset assessments.",
-    image: "/images/landing-page.png",
-    colSpan: "col-span-2",
-    rowSpan: "row-span-2",
-  },
-  {
-    id: 8,
-    category: "DASHBOARD DESIGN",
-    title: "Somakro",
-    description:
-      "Connecting you to reliable local professionals for every task, making everyday services accessible, efficient, and trusted.",
-    image: "/images/landing-page-4.png",
-    colSpan: "col-span-1",
-    rowSpan: "row-span-1",
-  },
-  {
-    id: 9,
-    category: "APP DESIGN",
+const WorksSection = ({ projects }: { projects: IProject[] }) => {
+  const [activeFilter, setActiveFilter] = useState("design");
 
-    title: "Asset Valuation Mobile",
-    description:
-      "Connecting you to reliable local professionals for every task, making everyday services accessible, efficient, and trusted.",
-    image: "/images/landing-page-6.png",
-    colSpan: "col-span-1",
-    rowSpan: "row-span-1",
-  },
-  {
-    id: 11,
-    category: "WEBSITE DESIGN",
-    title: "Asset Valuation",
-    description:
-      "Platform linking insurers with valuation services for efficient asset assessments.",
-    image: "/images/landing-page.png",
-    colSpan: "col-span-2",
-    rowSpan: "row-span-2",
-  },
-  {
-    id: 10,
-    category: "DASHBOARD DESIGN",
-    title: "Somakro",
-    description: "Mobile application for expense tracking and budgeting.",
-    image: "/images/landing-page-5.png",
-    colSpan: "col-span-2",
-    rowSpan: "row-span-2",
-  },
+  const filteredProjectContents = activeFilter
+    ? projects.filter(
+        (project: IProject) => project.projectType === activeFilter
+      )
+    : projects;
 
-  {
-    id: 12,
-    category: "WEBSITE DESIGN",
-    title: "Asset Valuation",
-    description:
-      "Platform linking insurers with valuation services for efficient asset assessments.",
-    image: "/images/landing-page.png",
-    colSpan: "col-span-1",
-    rowSpan: "row-span-1",
-  },
-];
+  const getCategories = (projectContent: IProject[]): string[] => {
+    const categories = projectContent?.map(
+      (project: IProject) => project.projectType
+    );
+    return Array.from(new Set(categories));
+  };
 
-const categories = ["ALL", "DASHBOARD DESIGN", "WEBSITE DESIGN", "APP DESIGN"];
+  const categories = getCategories(projects);
 
-const WorksSection = () => {
-  const [activeFilter, setActiveFilter] = useState("ALL");
-
-  const FilteredItems = projects.filter((item) =>
-    activeFilter === "ALL" ? true : item.category === activeFilter
-  );
-
-  console.log(FilteredItems);
   return (
     <Container>
-      <div className="container mx-auto px-4 md:px-0 py-16 text-foreground md:w-[90%] 2xl:w-full">
-        <div className="flex  gap-4 mb-12 justify-center">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveFilter(category)}
-              className={`px-4 py-2 rounded-full text-sm transition-colors duration-300
-              ${
-                activeFilter === category
-                  ? "bg-primary text-black"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
+      <div className="container  relative mx-auto  py-9 text-foreground px-5 lg:px-0 lg::w-[90%] 2xl:w-full">
+        <div>
+          <div className="hidden lg:flex  px-12 lg:px-0 py-6 lg:py-0  lg:w-full gap-4 lg:mb-12 lg:justify-center  ">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveFilter(category)}
+                className={`px-4 capitalize min-w-max font-medium py-2 rounded-full text-sm transition-colors duration-300
+          ${
+            activeFilter === category
+              ? "bg-[var(--primary)] text-black border border-black"
+              : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+          }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="lg:hidden mb-6 lg:mb-0">
+          <DropdownCategory
+            categories={categories}
+            setActiveFilter={setActiveFilter}
+            selectedCategory={activeFilter}
+          />
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 md:gap-16 gap-8 auto-rows-min   ">
-          {FilteredItems.map((project) => (
-            <div
-              key={project.id}
-              className={`relative group md:${project.colSpan} md:${project.rowSpan}  rounded-lg overflow-hidden `}
-            >
-              <div
-                className={`relative  ${
-                  project.rowSpan === "row-span-2"
-                    ? "md:h-[600px] row-span-2 "
-                    : "md:h-[400px] row-span-1"
-                } w-full rounded-lg h-[300px]`}
-              >
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  quality={100}
-                  priority={true}
-                  className="object-cover "
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="text-xl font-semibold mb-2 md:text-4xl">
-                  {project.title}
-                </h3>
-                <p className="text-base md:text-lg">{project.description}</p>
-              </div>
-            </div>
-          ))}
+        <div className="lg:flex justify-between items-center w-full  border-t mb-9">
+          <div className="space-y-2">
+            <h2 className="mt-9 lg:text-3xl text-xl font-semibold capitalize">
+              {activeFilter === "design"
+                ? "UI/UX Design"
+                : activeFilter === "graphics"
+                  ? "Graphics Designs"
+                  : activeFilter === "development"
+                    ? "Website Development"
+                    : activeFilter === "illustrations"
+                      ? "Illustration Designs"
+                      : activeFilter === "logo"
+                        ? "Logo Designs"
+                        : activeFilter === "motion"
+                          ? "Motion Design"
+                          : null}
+            </h2>
+            <p className="text-sm lg:text-lg text-gray-500 mb-9 ">
+              {activeFilter === "design" ? (
+                <span>Here are some of my UI/UX design projects.</span>
+              ) : activeFilter === "graphics" ? (
+                <span>Here are some of my graphics design projects.</span>
+              ) : activeFilter === "development" ? (
+                <span>Here are some of my website development projects.</span>
+              ) : activeFilter === "logo" ? (
+                <span>Here are some of my app design projects.</span>
+              ) : activeFilter === "illustrations" ? (
+                <span>Here are some of my illustrations.</span>
+              ) : activeFilter === "motion" ? (
+                <span>Here are some of my motion design projects.</span>
+              ) : null}
+            </p>
+          </div>
+
+          <p className="lg:text-base bg-zinc-100 inline-block mt-2 lg:mt-0 rounded-full px-3 py-1 text-sm font-medium">
+            Total {projects.length}
+          </p>
         </div>
-        
+
+        {filteredProjectContents.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  gap-8 auto-rows-min   ">
+            {filteredProjectContents.map((project: IProject, i: number) => (
+              <WorkCard
+                title={project?.title}
+                key={i}
+                slug={project?.slug}
+                projectType={project?.projectType}
+                image={project.introImage.url}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="text-xl pt-44 min-h-[500px] bg-zinc-100 rounded-xl w-full p-6 text-center">
+            Coming Soon..
+          </div>
+        )}
       </div>
     </Container>
   );

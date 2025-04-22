@@ -1,13 +1,11 @@
-import { ScrollReveal } from "@/components/Animations/ScrollReveal";
 import { Container } from "@/components/Container/Container";
-import ServiceSectionIntro from "./ServiceSectionIntro";
-import ServiceSectionProducts from "./ServiceSectionProducts";
+import Image from "next/image";
 
-const ServicesSection = () => {
+const MeetTheTeam = () => {
   return (
-    <div id="services" className="bg-foreground relative min-h-screen h-auto md:px-16 py-12 gap-4 md:py-20 px-4 font-wixMadefor">
+    <div className="h-auto lg:h-screen w-full relative bg-[#0B0B0A] py-20 lg:py-20  overflow-hidden">
       <svg
-        className="absolute left-0 top-0 w-[300px] lg:w-[800px] svg-1"
+        className="absolute left-0 top-0 w-[300px] lg:w-[500px] svg-1"
         width="715"
         height="773"
         viewBox="0 0 715 773"
@@ -47,7 +45,7 @@ const ServicesSection = () => {
       </svg>
 
       <svg
-        className="absolute right-0 top-0 w-[300px] lg:w-[800px]"
+        className="absolute right-0 top-0 w-[300px] lg:w-[500px]"
         width="642"
         height="670"
         viewBox="0 0 642 670"
@@ -86,22 +84,61 @@ const ServicesSection = () => {
         </defs>
       </svg>
 
-      <Container>
-        <ScrollReveal hidden={{ y: 100 }} visible={{ y: 0 }} duration={0.8}>
-          <ServiceSectionIntro />
-        </ScrollReveal>
+      <svg
+        className="absolute svg-1 top-20 inset-x-0 h-[880px] w-[400px] lg:w-[700px] mx-auto"
+        width="878"
+        height="863"
+        viewBox="0 0 878 863"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g filter="url(#filter0_f_980_45898)">
+          <path
+            d="M231.945 495.333C198.342 386.416 259.397 270.881 368.315 237.279L387.937 231.225C496.854 197.623 612.389 258.678 645.991 367.595C679.593 476.512 618.538 592.047 509.621 625.649L489.999 631.703C381.081 665.305 265.547 604.25 231.945 495.333Z"
+            fill="#6279EC"
+            fillOpacity="0.19"
+          />
+        </g>
+        <defs>
+          <filter
+            id="filter0_f_980_45898"
+            x="0.717693"
+            y="-0.0017395"
+            width="876.5"
+            height="862.931"
+            filterUnits="userSpaceOnUse"
+            colorInterpolationFilters="sRGB"
+          >
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="BackgroundImageFix"
+              result="shape"
+            />
+            <feGaussianBlur
+              stdDeviation="111"
+              result="effect1_foregroundBlur_980_45898"
+            />
+          </filter>
+        </defs>
+      </svg>
 
-        <ScrollReveal
-          hidden={{ y: 100 }}
-          visible={{ y: 0 }}
-          duration={0.8}
-          delay={0.2}
-        >
-          <ServiceSectionProducts />
-        </ScrollReveal>
-      </Container>
+      <div className="w-full px-5 lg:px-0 h-full relative">
+        <Container>
+          <div className="space-y-3 mb-12 lg:mb-0 text-center">
+            <p className="text-white text-sm lg:text-lg">Meet our team</p>
+            <h1 className="text-white text-2xl lg:text-3xl">We get your work done by team all around the world</h1>
+          </div>
+
+          <div className="-mb-28 lg:mt-16  w-full h-full flex items-center justify-center">
+            
+            <Image src="/images/teamorbit.png" className=" flex flex-col justify-center w-full lg:max-w-[1000px]  mx-auto "  alt="Growthlobby team" width={1000} height={900}/>
+          </div>
+        </Container>
+      </div>
     </div>
   );
 };
 
-export default ServicesSection;
+export default MeetTheTeam;

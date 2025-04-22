@@ -1,21 +1,20 @@
 interface IAuthor {
   name: string;
-  image: string;
   profilePic: { url: string };
   role: string;
 }
 
 export interface IBlog {
-  id: number;
+  id?: number;
   title: string;
   slug: string;
-  coverImage: { url: string };
-  readTime?: number;
-  date?: string;
-  author?: IAuthor;
-  category?: string;
-  details?: { content: { html: string } };
+  image: { url: string };
+  readTime: number;
+  author: IAuthor;
+  category: string;
+  content?: {  html: string  };
   featured?: boolean
+  publishedAt: string;	
 }
 
 export interface IBlogData {

@@ -8,8 +8,9 @@ export const PROJECT_QUERY = gql`
       description
      	slug
       platform
-        industry
-    	coverimage {
+      industry
+      projectType
+    	introImage {
         url
       }
     }
@@ -25,15 +26,33 @@ export const PROJECT_DETAIL_QUERY = gql`
     livesite
     industry
     platform
-    services
     timeline
     year
-    coverimage {
+    projectType
+    introImage {
       url
     }
     content {
       html
     }
   }
+  }
+`;
+
+export const OTHER_PROJECT_QUERY = gql`
+  query getOtherProject($slug: String) {
+    projects(where: { slug_not_contains: $slug }, first: 3) {
+      publishedAt
+      id
+      title
+      description
+      projectType
+      slug
+      livesite
+      platform
+      introImage {
+        url
+      }
+    }
   }
 `;
