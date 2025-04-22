@@ -13,7 +13,7 @@ export default function Nav() {
   return (
     <div
       id="top"
-      className=" lg:w-[730px] lg:bg-transparent bg-white/10 lg:backdrop-blur-none backdrop-blur-md lg:border-none border-none lg:border  justify-center w-full  mx-auto z-50 fixed  inset-x-0 px-3  py-3 lg:py-5  "
+      className=" lg:w-[690px] lg:bg-transparent bg-white lg:backdrop-blur-none backdrop-blur-md lg:border-none border-none lg:border  justify-center w-full  mx-auto z-50 fixed  inset-x-0 px-3  py-3 lg:py-5  "
     >
       <div className="flex  h-16 items-center justify-between space-x-4 md:space-x-6 md:justify-between">
         {/* Logo */}
@@ -32,35 +32,35 @@ export default function Nav() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex md:items-center md:space-x-6 pl-6 pr-2 py-2 md:border  rounded-xl bg-white/10 backdrop-blur-md">
+        <div className="hidden md:flex md:items-center md:space-x-6 pl-6 pr-2 py-2 md:border  rounded-xl bg-white/70 backdrop-blur-md">
           <Link
-            href="/works"
+            href="/#services"
             className={`  text-white lg:text-sm font-medium hover:text-primary transition-all ${
-              pathname === "/works" ? "text-primaryActive" : "text-zinc-800"
+              pathname === "/#services" ? "text-[var(--primaryActive)] font-semibold" : "text-zinc-800"
             }`}
           >
             SERVICE
           </Link>
-          <Link
+          {/* <Link
             href="/about-us"
             className={` lg:text-sm font-medium hover:text-primary transition-all ${
               pathname === "/about-us" ? "text-primaryActive" : "text-zinc-800"
             }`}
           >
             PRICING
-          </Link>
+          </Link> */}
           <Link
             href="/works"
             className={` lg:text-sm font-medium hover:text-primary transition-all ${
-              pathname === "/works" ? "text-primaryActive" : "text-zinc-800"
+              pathname === "/works" ? "text-[var(--primaryActive)] font-semibold" : "text-zinc-800"
             }`}
           >
             PROJECT
           </Link>
           <Link
-            href="blogs"
+            href="/blog"
             className={` lg:text-sm font-medium hover:text-primary transition-all ${
-              pathname === "/blogs" ? "text-primaryActive" : "text-zinc-800"
+              pathname === "/blog" ? "text-primaryActive" : "text-zinc-800"
             }`}
           >
             BLOG
@@ -114,15 +114,15 @@ export default function Nav() {
             >
               <div className="flex flex-col space-y-4">
                 <Link
-                  href="/services"
+                  href="#services"
                   className={` text-2xl py-2 hover:text-primary transition-all ${
-                    pathname === "/services" ? "text-primaryActive" : "text-zinc-800"
+                    pathname === "/#services" ? "text-primaryActive" : "text-zinc-800"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
                   Services
                 </Link>
-                <Link
+                {/* <Link
                   href="/pricing"
                   className={` text-2xl py-2 hover:text-primary transition-all ${
                     pathname === "/pricing" ? "text-primaryActive" : "text-zinc-800"
@@ -130,16 +130,7 @@ export default function Nav() {
                   onClick={() => setIsOpen(false)}
                 >
                   Pricing
-                </Link>
-                <Link
-                  href="/about-us"
-                  className={` text-2xl py-2 hover:text-primary transition-all ${
-                    pathname === "/about-us" ? "text-primaryActive" : "text-zinc-800"
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  About us
-                </Link>
+                </Link> */}
                 <Link
                   href="/works"
                   className={` text-2xl py-2 hover:text-primary transition-all ${
@@ -150,13 +141,22 @@ export default function Nav() {
                   Our Work
                 </Link>
                 <Link
-                  href="blogs"
+                  href="blog"
                   className={` text-2xl py-2 hover:text-primary transition-all ${
-                    pathname === "/blogs"
+                    pathname === "/blog"
                       ? "text-primary"
                       : "text-zinc-800"
                   }`}
                 >Blogs
+                </Link>
+                <Link
+                  href="/about-us"
+                  className={` text-2xl py-2 hover:text-primary transition-all ${
+                    pathname === "/about-us" ? "text-primaryActive" : "text-zinc-800"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  About us
                 </Link>
 
                 <Button onClick={() => setOpenContactForm(true)} className="space-x-4 py-4 px-4 flex justify-items-center bg-[var(--primary)] items-center rounded-full justify-center hover:bg-primary/40 text-black font-medium hover:bg-[var(--primary)]">CONTACT US</Button>

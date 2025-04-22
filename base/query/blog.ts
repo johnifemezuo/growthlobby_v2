@@ -5,10 +5,11 @@ export const BLOG_QUERY = gql`
     blogs {
       id
       title
-      date
       slug
       category
       readTime
+      featured
+      publishedAt
       author {
         name
         profilePic {
@@ -16,7 +17,30 @@ export const BLOG_QUERY = gql`
         }
         role
       }
-      coverImage {
+      image {
+        url
+      }
+    }
+  }
+`;
+export const BLOG_FEATURED_QUERY = gql`
+  query {
+    blogs(where: { featured: true }, first: 3) {
+      id
+      title
+      slug
+      category
+      readTime
+      featured
+      publishedAt
+      author {
+        name
+        profilePic {
+          url
+        }
+        role
+      }
+      image {
         url
       }
     }
@@ -27,7 +51,6 @@ export const BLOG_DETAIL_QUERY = gql`
     blogs(where: { slug: $slug }) {
       id
       title
-      date
       slug
       category
       readTime
@@ -38,11 +61,10 @@ export const BLOG_DETAIL_QUERY = gql`
         }
         role
       }
-      coverImage {
+      image {
         url
       }
       content {
-        markdown
         html
       }
     }
@@ -51,17 +73,16 @@ export const BLOG_DETAIL_QUERY = gql`
 
 export const RELATED_BLOG_QUERY = gql`
   query getRelatedBlogs($slug: String) {
-    blogs(where: { slug_not_contains: $slug }) {
+    blogs(where: { slug_not_contains: $slug,}, first: 2) {
       id
       title
-      date
       slug
       category
       readTime
       author {
         name
       }
-      coverImage {
+      image {
         url
       }
     }

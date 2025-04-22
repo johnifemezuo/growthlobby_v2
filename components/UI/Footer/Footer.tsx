@@ -9,10 +9,9 @@ const Footer = () => {
   const menuItems = [
     { label: "Homepage", href: "/" },
     { label: "About us", href: "/about" },
-    { label: "Services", href: "/services" },
-    { label: "Our Work", href: "/work" },
+    { label: "Services", href: "/#services" },
+    { label: "Our Work", href: "/works" },
     { label: "Client Stories", href: "/clients" },
-    { label: "Let's Connect", href: "/connect" },
   ];
 
   return (

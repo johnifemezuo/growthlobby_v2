@@ -175,9 +175,9 @@ export default function FaqSection() {
                     className="flex-shrink-0 ml-4 bg-gray-900 rounded-full p-1"
                   >
                     {activeIndex === index ? (
-                      <Minus className="w-5 h-5 text-white" />
-                    ) : (
                       <Plus className="w-5 h-5 text-white rotate-45" />
+                    ) : (
+                    <Minus className="w-5 h-5 text-white" />
                     )}
                   </motion.div>
                 </button>

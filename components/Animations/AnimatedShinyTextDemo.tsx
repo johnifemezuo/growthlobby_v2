@@ -3,7 +3,7 @@ import { AnimatedShinyText } from "../magicui/animated-shiny-text";
 import { cn } from "@/base/lib/utils";
 import Image from "next/image";
 
-export function AnimatedShinyTextDemo() {
+export function AnimatedShinyTextDemo({text}:{text: string}) {
   return (
     <div className="z-10 flex  items-center justify-center">
       <div
@@ -19,7 +19,7 @@ export function AnimatedShinyTextDemo() {
                 width={110}
                 className="w-5 lg:w-[23px] h-5 lg:h-[23px]"
               />
-          <span className="text-zinc-600"> Elevate your Digital Presence.✨</span>
+          <span className="text-zinc-600 text-sm">{text}</span>
           <ArrowRightCircle className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
         </AnimatedShinyText>
       </div>

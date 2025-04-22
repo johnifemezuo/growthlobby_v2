@@ -3,8 +3,10 @@ export interface IProject {
     title: string;
     link: string;
     projectType: string;
+    services?: string;
+    timeline?: string;
     category: string;
-    coverimage: {url : string}
+    introImage: {url : string}
     industry: string;
     platform: string;
     slug: string

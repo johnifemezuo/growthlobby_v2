@@ -1,18 +1,26 @@
-import React from 'react'
-import ContactUsSection from '@/components/Modules/Home/ContactUs/ContactUsSection'
-import Footer from '@/components/UI/Footer/Footer'
-import HeroSection from '@/components/Modules/Works/HeroSection/HeroSection'
-import WorkSample from '@/components/Modules/Works/WorkSample/WorkSample'
+"use client"
 
-const OurWorksPage = () => {
+import React from 'react'
+import HeroSection from '@/components/Modules/Works/WorkHeroSection/WorkHeroSection'
+import WorkSample from '@/components/Modules/Works/WorkSample/WorkSample'
+import { useSuspenseQuery } from '@apollo/client';
+import { PROJECT_QUERY } from '@/base/query/project';
+import { IProjectData } from '@/base/interface/IProject';
+import Head from 'next/head';
+
+
+export default function OurWorksPage () {
+  const { data } = useSuspenseQuery<IProjectData>(PROJECT_QUERY);
+    
+      const projects = data?.projects || {};
+  
   return (
     <div>
+      <Head>
+        <title>Growthlobby | Work </title>
+      </Head>
       <HeroSection />
-      <WorkSample />
-      <ContactUsSection/>
-      <Footer/>
+      <WorkSample projects={projects} />
     </div>
   )
 }
-
-export default OurWorksPage
