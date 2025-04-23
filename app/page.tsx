@@ -7,7 +7,7 @@ import { PROJECT_QUERY } from "@/base/query/project";
 import BlogSection from "@/components/Modules/Home/BlogSection/BlogSection";
 import BrandCompany from "@/components/Modules/Home/BrandCompany/BrandCompany";
 import FaqSection from "@/components/Modules/Home/FaqSection/FaqSection";
-import HeroSection from "@/components/Modules/Home/Herosection/HeroSection";
+import { HeroParallaxDemo } from "@/components/Modules/Home/Herosection/ParallaxHero";
 import ServicesSection from "@/components/Modules/Home/Services/ServicesSection";
 import { SuccessPrev } from "@/components/Modules/Home/SuccessPrev/SuccessPrev";
 import TestimonySection from "@/components/Modules/Home/Testimony/TestimonySection";
@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <div className="">
-      <HeroSection />
+      <HeroParallaxDemo />
       <WelcomeSection />
       <ServicesSection />
       <WorksSection projects={projects} />

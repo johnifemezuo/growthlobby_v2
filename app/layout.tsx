@@ -5,18 +5,13 @@ import { PageLayout } from "@/components/Layout/PageLayout";
 import { ApolloWrapper } from "@/base/lib/apollo-client";
 
 
-// const farro = Farro({
-//   variable: "--font-farro",
-//   subsets: ["latin"],
-//   weight: ["400", "700"], 
-// });
+
 const wixMadefor = Wix_Madefor_Display({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   display: 'swap',
   variable: '--font-wix-madefor', 
 });
-
 
 export const metadata: Metadata = {
   title: "Growthlobby : Design + Code Agency",

@@ -23,7 +23,7 @@ const WorksSection = ({ projects }: { projects: IProject[] }) => {
 
         {/* Gallery Grid */}
         <ScrollReveal hidden={{ y: 100 }} visible={{ y: 0 }} duration={0.8}>
-          <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  gap-8 auto-rows-min   ">
+          <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  gap-4 auto-rows-min   ">
             {projects.map((project: IProject, i: number) => (
               <WorkCard
                 title={project?.title}

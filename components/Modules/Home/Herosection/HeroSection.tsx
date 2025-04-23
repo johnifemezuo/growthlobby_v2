@@ -9,9 +9,12 @@ import Link from "next/link";
 import { useEffect } from "react";
 import HeroCard from "./HeroCard";
 import HeroRating from "./HeroRating";
+import { FlipWords } from "@/components/UI/flip-words";
 
 const HeroSection = () => {
   const { toggleAutoplay, emblaRef } = useCarouselFunctions();
+  const words1 = ["Design"];
+  const words2 = ["Motion", "Illustration", "Development"];
 
   useEffect(() => {
     toggleAutoplay();
@@ -145,8 +148,9 @@ const HeroSection = () => {
             <AnimatedShinyTextDemo text="Elevate your Digital Presence.✨" />
 
             <h1 className="text-4xl max-w-2xl  mx-auto font-bold lg:text-4xl xl:text-6xl font-serif">
-              <span className="italic font-light">Design</span> &{" "}
-              <span className="italic font-light">Brand</span> <br /> partner
+              <h1 className="flex text-center justify-center items-center"><FlipWords  words={words1} /> <span>&{" "}</span>
+              <FlipWords  words={words2} /> </h1>
+               partner
               for all your business needs.
             </h1>
             <p className="lg:text-lg text-zinc-700">

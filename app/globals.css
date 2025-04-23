@@ -1,3 +1,5 @@
+/* @import "locomotive-scroll/dist/locomotive-scroll.css"; */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,9 +7,15 @@
 :root {
   --font-farro: 'Wix Madefor Text', sans-serif;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
+
+/* [data-scroll-container] {
+  overflow: hidden;
+} */
 * {
   margin: 0;
   padding: 0;

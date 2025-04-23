@@ -6,10 +6,10 @@ const WorkCard = ({slug, image, title, projectType}:{slug: string; image:string;
   return (
      <Link href={`works/${slug}`}>
                     <div
-                      className={`relative group   rounded-lg overflow-hidden `}
+                      className={`relative group  border p-4 rounded-2xl lg:h-[530px] overflow-hidden `}
                     >
                       <div
-                        className={`relative rounded-xl lg:rounded-2xl overflow-hidden   w-full  h-[300px] lg:h-[500px]`}
+                        className={`relative rounded-xl lg:rounded-2xl overflow-hidden   w-full  h-[300px] lg:h-[400px]`}
                       >
                         <Image
                           src={image}

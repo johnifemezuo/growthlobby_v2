@@ -1,9 +1,10 @@
+import { AnimatedTooltipPreview } from "@/components/magicui/AnimatedTooltipPreview";
 import Image from "next/image";
 
 const HeroRating = () => {
   return (
-    <div className="flex items-center space-x-3 px-4 lg:px-0">
-      <div className="flex -space-x-3 lg:-space-x-4 border-r pr-3">
+    <div className="lg:flex items-center space-x-3 lg:space-x-6 px-4 lg:px-0">
+      {/* <div className="flex -space-x-3 lg:-space-x-4 border-r pr-3">
         <Image
           src="/images/user1.png"
           alt=""
@@ -46,11 +47,13 @@ const HeroRating = () => {
           height={50}
           className="rounded-full w-[30px] h-[30px] object-cover border"
         />
-      </div>
+      </div> */}
 
-      <div className="flex flex-col -mt-5 justify-center space-y-0 ">
-        <div className="flex space-x-1 items-center">
-          <div className="flex -space-x-2 mt-5 ">
+      <AnimatedTooltipPreview />
+
+      <div className="flex flex-col -mt-5 justify-center space-y-0  min-w-[200px]">
+        <div className="flex space-x-1 items-center justify-center lg:justify-start">
+          <div className="flex -space-x-2 mt-5 lg:mt- ">
             <Image
               src="/images/svg/star.svg"
               alt=""
@@ -91,7 +94,7 @@ const HeroRating = () => {
           <p className="lg:text-xl font-medium text-zinc-600 mt-5">5.0</p>
         </div>
 
-        <p className="text-center text-xs lg:text-sm mt-2 pl-1 text-zinc-700 font-medium">
+        <p className=" text-xs mt-2  text-center lg:t text-zinc-700 font-medium">
           Over 200+ businesses worldwide
         </p>
       </div>
