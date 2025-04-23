@@ -4,7 +4,7 @@ import BrandCompany from "@/components/Modules/Home/BrandCompany/BrandCompany";
 import TestimonySection from "@/components/Modules/Home/Testimony/TestimonySection";
 import WelcomeSection from "@/components/Modules/Home/Welcome/WelcomeSection";
 
-const AboutUsePage = () => {
+export default function AboutUsePage() {
   return (
     <>
       <HeroSection />
@@ -16,4 +16,3 @@ const AboutUsePage = () => {
   );
 };
 
-export default AboutUsePage;

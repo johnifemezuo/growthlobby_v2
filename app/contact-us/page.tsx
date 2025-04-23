@@ -3,7 +3,7 @@ import HeroSection from '@/components/Modules/Contacts/HeroSection/HeroSection'
 import ContactUsSection from '@/components/Modules/Home/ContactUs/ContactUsSection'
 import TestimonySection from '@/components/Modules/Home/Testimony/TestimonySection'
 
-const page = () => {
+export default function ContactPage() {
   return (
     <div>
       <HeroSection />
@@ -12,5 +12,3 @@ const page = () => {
     </div>
   )
 }
-
-export default page
