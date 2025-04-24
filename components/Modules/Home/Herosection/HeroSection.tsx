@@ -4,12 +4,12 @@ import { useCarouselFunctions } from "@/base/hooks/useCarouselfunctions";
 import { AnimatedShinyTextDemo } from "@/components/Animations/AnimatedShinyTextDemo";
 import { Container } from "@/components/Container/Container";
 import { ArrowRight } from "@/components/Icons/ArrowRight";
+import { FlipWords } from "@/components/UI/flip-words";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import HeroCard from "./HeroCard";
 import HeroRating from "./HeroRating";
-import { FlipWords } from "@/components/UI/flip-words";
 
 const HeroSection = () => {
   const { toggleAutoplay, emblaRef } = useCarouselFunctions();
@@ -147,16 +147,15 @@ const HeroSection = () => {
           <div className="text-center py-8 lg:pt-20 space-y-5 max-w-[700px] mx-auto px-4 lg:px-0">
             <AnimatedShinyTextDemo text="Elevate your Digital Presence.✨" />
 
-            <h1 className="text-4xl max-w-2xl  mx-auto font-bold lg:text-4xl xl:text-6xl font-serif">
-              <h1 className="flex text-center justify-center items-center"><FlipWords  words={words1} /> <span>&{" "}</span>
-              <FlipWords  words={words2} /> </h1>
-               partner
-              for all your business needs.
-            </h1>
+            <div className="text-4xl max-w-2xl  mx-auto font-bold lg:text-4xl xl:text-6xl font-serif">
+              <h1 className="flex text-center justify-center items-center">
+                <FlipWords words={words1} />&
+                <FlipWords words={words2} />
+              </h1>
+              partner for all your business needs.
+            </div>
             <p className="lg:text-lg text-zinc-700">
-              From sleek websites and responsive web apps to standout mobile
-              prototypes –we bring your ideas to life and elevate them above the
-              competition.
+            Transforming Ideas Into Stunning Digital Realities. We are a team of passionate designers and developers dedicated to creating exceptional digital experiences that captivate and engage your audience.
             </p>
           </div>
 

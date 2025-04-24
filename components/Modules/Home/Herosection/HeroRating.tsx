@@ -95,7 +95,7 @@ const HeroRating = () => {
         </div>
 
         <p className=" text-xs mt-2  text-center lg:t text-zinc-700 font-medium">
-          Over 200+ businesses worldwide
+          Working for Over 200+ businesses worldwide
         </p>
       </div>
     </div>

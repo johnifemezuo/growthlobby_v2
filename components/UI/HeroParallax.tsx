@@ -124,9 +124,7 @@ export const Header = () => {
             partner for all your business needs.
           </div>
           <p className="lg:text-lg text-zinc-700">
-            From sleek websites and responsive web apps to standout mobile
-            prototypes –we bring your ideas to life and elevate them above the
-            competition.
+          Transforming Ideas Into Stunning Digital Realities. We are a team of passionate designers and developers dedicated to creating exceptional digital experiences that captivate and engage your audience.
           </p>
         </div>
 

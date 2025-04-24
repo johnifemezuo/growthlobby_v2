@@ -4,45 +4,45 @@ import { AnimatedTooltip } from "../UI/AnimatedTooltip";
 const people = [
   {
     id: 1,
-    name: "John Doe",
-    designation: "Software Engineer",
+    name: "John",
+    designation: "UI Engineer",
     image:
-      "/images/user1.png",
+      "/images/t5.png",
   },
   {
     id: 2,
-    name: "Robert Johnson",
-    designation: "Product Manager",
+    name: "Panda Johnson",
+    designation: "Graphics Designer",
     image:
-      "/images/user1.png",
+      "/images/t6.png",
   },
   {
     id: 3,
-    name: "Jane Smith",
-    designation: "Data Scientist",
+    name: "Lucy",
+    designation: "Motion Designer",
     image:
-      "/images/user1.png",
+      "/images/t4.png",
   },
   {
     id: 4,
-    name: "Emily Davis",
-    designation: "UX Designer",
+    name: "Zainab",
+    designation: "Product Designer",
     image:
-      "/images/user1.png",
+      "/images/t3.png",
   },
   {
     id: 5,
-    name: "Tyler Durden",
-    designation: "Soap Developer",
+    name: "Osmond",
+    designation: "Framer Developer",
     image:
-      "/images/user1.png",
+      "/images/t2.png",
   },
   {
     id: 6,
-    name: "Dora",
-    designation: "The Explorer",
+    name: "Chiamaka",
+    designation: "Illustrator",
     image:
-      "/images/user1.png",
+      "/images/t1.png",
   },
 ];
 
