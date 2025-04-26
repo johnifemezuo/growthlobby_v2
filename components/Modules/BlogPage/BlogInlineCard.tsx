@@ -41,12 +41,11 @@ export const BlogInlineCard = ({
           
 
           <div className="space-y-4">
-          <Link
-            href={slug}
+          <h1
             className="text-base lg:text-xl hover:text-primary text-zinc-700 font-semibold leading-tight"
           >
             {title}
-          </Link>
+          </h1>
           <div className="text-xs text-gray-500 lg:text-sm">By {author as any}</div>
           </div>
         </div>
