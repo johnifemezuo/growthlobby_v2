@@ -28,26 +28,26 @@ export default function BlogSection({ posts }: BlogSectionProps) {
             {[firstFeatured, secondFeatured].map((post: IBlog, i) => (
               <BlogInlineCard
                 key={i}
-                slug={`/blog/${post.slug}`}
-                title={post.title}
-                readTime={post.readTime}
-                category={post.category}
-                author={post.author.name as any}
-                image={post.image.url as any}
-                publishedAt={post.publishedAt}
+                slug={`/blog/${post?.slug}`}
+                title={post?.title}
+                readTime={post?.readTime}
+                category={post?.category}
+                author={post?.author.name as any}
+                image={post?.image.url as any}
+                publishedAt={post?.publishedAt}
               />
             ))}
           </div>
 
           <div className="flex-1  order-first lg:order-last">
             <BlogCard
-              slug={thirdFeatured.slug}
-              title={thirdFeatured.title}
-              readTime={thirdFeatured.readTime as any}
-              category={thirdFeatured.category}
-              author={thirdFeatured.author.name}
-              image={thirdFeatured.image.url}
-              publishedAt={thirdFeatured.publishedAt}
+              slug={thirdFeatured?.slug}
+              title={thirdFeatured?.title}
+              readTime={thirdFeatured?.readTime as any}
+              category={thirdFeatured?.category}
+              author={thirdFeatured?.author.name}
+              image={thirdFeatured?.image.url}
+              publishedAt={thirdFeatured?.publishedAt}
             />
           </div>
         </div>

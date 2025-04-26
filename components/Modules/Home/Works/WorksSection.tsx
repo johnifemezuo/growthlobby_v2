@@ -30,7 +30,7 @@ const WorksSection = ({ projects }: { projects: IProject[] }) => {
                 key={i}
                 slug={project?.slug}
                 projectType={project?.projectType}
-                image={project.introImage.url}
+                image={project?.introImage?.url}
               />
             ))}
           </div>
