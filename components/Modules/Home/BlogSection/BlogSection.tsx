@@ -12,7 +12,6 @@ interface BlogSectionProps {
 export default function BlogSection({ posts }: BlogSectionProps) {
   const [firstFeatured, secondFeatured] = posts?.slice(0, 2); // First two featured posts
   const thirdFeatured = posts[2];
-  console.log(thirdFeatured)
 
   return (
     <ScrollReveal
