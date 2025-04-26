@@ -130,7 +130,7 @@ export const Header = () => {
 
         <HeroRating />
 
-        <div className="flex w-full lg:w-auto bg-white border border-zinc-100 p-2  rounded-lg flex-row items-center justify-between lg:justify-center gap-4 mt-8">
+        <div className="flex w-full lg:w-auto bg-white border border-zinc-200 p-2  rounded-lg flex-row items-center justify-between lg:justify-center gap-2 mt-8">
           <Link
             href="/book"
             className="bg-gray-900 text-center text-white px-6 text-sm py-4 rounded-md hover:bg-black transition-colors w-full sm:w-auto"
@@ -139,9 +139,9 @@ export const Header = () => {
           </Link>
           <Link
             href="/pricing"
-            className="flex  text-sm items-center justify-center gap-2 px-6 py-4 rounded-md hover:bg-gray-100 transition-colors w-full sm:w-auto"
+            className="flex border text-sm items-center justify-center gap-2 px-6 py-4 rounded-md hover:bg-gray-100 transition-colors w-full sm:w-auto"
           >
-            SEE PRICING <ArrowRight />
+            CONTACT US <ArrowRight />
           </Link>
         </div>
       </div>
