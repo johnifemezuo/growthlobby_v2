@@ -2,9 +2,7 @@
 import { HeroParallax } from "@/components/UI/HeroParallax";
 import React from "react";
 
-export function HeroParallaxDemo() {
-  return <HeroParallax products={products} />;
-}
+
 export const products = [
   {
     title: "Moonbeam",
@@ -100,3 +98,7 @@ export const products = [
       "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
   },
 ];
+
+export function HeroParallaxDemo() {
+  return <HeroParallax products={products} />;
+}

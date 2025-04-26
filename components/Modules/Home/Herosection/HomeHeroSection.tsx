@@ -4,14 +4,14 @@ import { useCarouselFunctions } from "@/base/hooks/useCarouselfunctions";
 import { AnimatedShinyTextDemo } from "@/components/Animations/AnimatedShinyTextDemo";
 import { Container } from "@/components/Container/Container";
 import { ArrowRight } from "@/components/Icons/ArrowRight";
-import { FlipWords } from "@/components/UI/flip-words";
+import { FlipWords } from "@/components/UI/FlipWords";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import HeroCard from "./HeroCard";
 import HeroRating from "./HeroRating";
 
-const HeroSection = () => {
+const HomeHeroSection = () => {
   const { toggleAutoplay, emblaRef } = useCarouselFunctions();
   const words1 = ["Design"];
   const words2 = ["Motion", "Illustration", "Development"];
@@ -21,7 +21,7 @@ const HeroSection = () => {
   }, [toggleAutoplay]);
 
   return (
-    <div className="h-auto w-full relative bg-white py-20 lg:py-20  overflow-hidden">
+    <div className=" lg:pt-12 lg:h-auto font-wixMadefor text-white bg-[#0F100D] flex flex-col">
       <svg
         className="absolute left-0 top-0 w-[300px] lg:w-[500px] svg-1"
         width="715"
@@ -148,14 +148,17 @@ const HeroSection = () => {
             <AnimatedShinyTextDemo text="Elevate your Digital Presence.✨" />
 
             <div className="text-4xl max-w-2xl  mx-auto font-bold lg:text-4xl xl:text-6xl font-serif">
-              <h1 className="flex text-center justify-center items-center">
+              <h1 className="flex text-center justify-center items-center text-zinc-100">
                 <FlipWords words={words1} />&
                 <FlipWords words={words2} />
               </h1>
               partner for all your business needs.
             </div>
-            <p className="lg:text-lg text-zinc-700">
-            Transforming Ideas Into Stunning Digital Realities. We are a team of passionate designers and developers dedicated to creating exceptional digital experiences that captivate and engage your audience.
+            <p className="lg:text-lg text-zinc-200">
+              Transforming Ideas Into Stunning Digital Realities. We are a team
+              of passionate designers and developers dedicated to creating
+              exceptional digital experiences that captivate and engage your
+              audience.
             </p>
           </div>
 
@@ -259,4 +262,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default HomeHeroSection;

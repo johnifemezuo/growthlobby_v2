@@ -1,38 +1,39 @@
 "use client";
 
+import { IBlogData } from "@/base/interface/IBlog";
+import { IProjectData } from "@/base/interface/IProject";
+import { BLOG_FEATURED_QUERY } from "@/base/query/blog";
+import { PROJECT_QUERY } from "@/base/query/project";
+import BlogSection from "@/components/Modules/Home/BlogSection/BlogSection";
 import BrandCompany from "@/components/Modules/Home/BrandCompany/BrandCompany";
 import FaqSection from "@/components/Modules/Home/FaqSection/FaqSection";
-import { HeroParallaxDemo } from "@/components/Modules/Home/Herosection/ParallaxHero";
+import { HeroParallaxDemo } from "@/components/Modules/Home/Herosection/HeroParallaxDemo";
 import ServicesSection from "@/components/Modules/Home/Services/ServicesSection";
 import { SuccessPrev } from "@/components/Modules/Home/SuccessPrev/SuccessPrev";
 import TestimonySection from "@/components/Modules/Home/Testimony/TestimonySection";
 import WelcomeSection from "@/components/Modules/Home/Welcome/WelcomeSection";
+import WorksSection from "@/components/Modules/Home/Works/WorksSection";
+import { useQuery } from "@apollo/client";
 
 export default function Home() {
-  // const { data } = useSuspenseQuery<IBlogData>(BLOG_FEATURED_QUERY);
-  // const blogContents = data?.blogs || [];
+  const { data, loading:loadingBlog } = useQuery<IBlogData>(BLOG_FEATURED_QUERY);
+  const blogContents = data?.blogs || [];
 
-  // const { data: work,
-  //  } = useSuspenseQuery<IProjectData>(PROJECT_QUERY);
+  const { data: work, loading: loadingProject } = useQuery<IProjectData>(PROJECT_QUERY);
 
-  // const projects = work?.projects.slice(0, 6) || [];
-
-  // if(!blogContents || !projects) {
-  //   return {notFound: true};
-  // }
-  // console.log({blogContents, projects});
+  const projects = work?.projects.slice(0, 6) || [];
 
   return (
-    <div className="">
+    <>
       <HeroParallaxDemo />
       <WelcomeSection />
       <ServicesSection />
-      {/* {!projects ? <div></div> :<WorksSection projects={projects} />} */}
+      { loadingProject ? <div>Loading...</div> : <WorksSection projects={projects} />}
       <SuccessPrev />
       <BrandCompany />
       <TestimonySection />
-      {/* {!projects ? <div></div> : <BlogSection posts={blogContents} />} */}
+      {loadingBlog ? <div>Loading...</div> : <BlogSection posts={blogContents} />}
       <FaqSection />
-    </div>
+    </>
   );
 }

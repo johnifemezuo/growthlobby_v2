@@ -2,12 +2,12 @@
 
 import { ApolloLink, HttpLink } from "@apollo/client";
 import {
-  ApolloNextAppProvider,
   NextSSRApolloClient,
   NextSSRInMemoryCache,
   SSRMultipartLink,
 } from "@apollo/experimental-nextjs-app-support/ssr";
 import { ENDPOINT } from "../constant/variables";
+import { ApolloNextAppProvider } from "@apollo/experimental-nextjs-app-support";
 
 
 

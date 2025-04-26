@@ -12,7 +12,7 @@ import React from "react";
 import { AnimatedShinyTextDemo } from "../Animations/AnimatedShinyTextDemo";
 import { ArrowRight } from "../Icons/ArrowRight";
 import HeroRating from "../Modules/Home/Herosection/HeroRating";
-import { FlipWords } from "./flip-words";
+import { FlipWords } from "./FlipWords";
 
 export const HeroParallax = ({
   products,
@@ -62,7 +62,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[300vh] py-40 lg:py-0 overflow-hidden bg-white antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[300vh] bg-[#0F100D] py-40 lg:py-0 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -111,20 +111,23 @@ export const Header = () => {
   const words2 = ["Motion", "Illustration", "Development"];
 
   return (
-    <div className="bg-white relative mx-auto z-50 py-20 md:py-0 lg:py-20 px-4 w-full  left-0 top-0">
+    <div className="bg-[#0F100D relative mx-auto z-50 py-20 md:py-0 lg:py-20 px-4 w-full  left-0 top-0">
       <div className="flex flex-col justify-center items-center h-full  px-5 lg:px-0">
         <div className="text-center py-8 lg:pt-20 space-y-5 max-w-[700px] mx-auto px-4 lg:px-0">
           <AnimatedShinyTextDemo text="Elevate your Digital Presence.✨" />
 
-          <div className="text-4xl max-w-2xl  mx-auto font-bold lg:text-4xl xl:text-6xl font-serif">
+          <div className="text-4xl text-zinc-200 max-w-2xl  mx-auto font-bold lg:text-4xl xl:text-6xl font-serif">
             <h1 className="flex text-center justify-center items-center">
               <FlipWords words={words1} /> <span>& </span>
               <FlipWords words={words2} />{" "}
             </h1>
             partner for all your business needs.
           </div>
-          <p className="lg:text-lg text-zinc-700">
-          Transforming Ideas Into Stunning Digital Realities. We are a team of passionate designers and developers dedicated to creating exceptional digital experiences that captivate and engage your audience.
+          <p className="lg:text-lg text-zinc-200">
+            Transforming Ideas Into Stunning Digital Realities. We are a team of
+            passionate designers and developers dedicated to creating
+            exceptional digital experiences that captivate and engage your
+            audience.
           </p>
         </div>
 

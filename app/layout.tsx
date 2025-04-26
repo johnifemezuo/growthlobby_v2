@@ -1,16 +1,14 @@
-import type { Metadata } from "next";
-import { Wix_Madefor_Display} from "next/font/google";
-import "./globals.css";
-import { PageLayout } from "@/components/Layout/PageLayout";
 import { ApolloWrapper } from "@/base/lib/apollo-client";
-
-
+import { PageLayout } from "@/components/Layout/PageLayout";
+import type { Metadata } from "next";
+import { Wix_Madefor_Display } from "next/font/google";
+import "./globals.css";
 
 const wixMadefor = Wix_Madefor_Display({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
-  variable: '--font-wix-madefor', 
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-wix-madefor",
 });
 
 export const metadata: Metadata = {
@@ -25,14 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={` ${wixMadefor.variable}  antialiased`}
-      >
+      <body className={` ${wixMadefor.variable}  antialiased`}>
         <PageLayout>
-          <ApolloWrapper>
-            {children}
-          </ApolloWrapper>
-          </PageLayout>
+          <ApolloWrapper>{children}</ApolloWrapper>
+        </PageLayout>
       </body>
     </html>
   );
