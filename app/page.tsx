@@ -17,11 +17,16 @@ import { useSuspenseQuery } from "@apollo/client";
 
 export default function Home() {
   const { data } = useSuspenseQuery<IBlogData>(BLOG_FEATURED_QUERY);
-  const blogContents = data?.blogs || {};
+  const blogContents = data?.blogs || [];
 
+  
   const { data: work } = useSuspenseQuery<IProjectData>(PROJECT_QUERY);
+  
+  const projects = work?.projects.slice(0, 6) || [];
 
-  const projects = work?.projects.slice(0, 6) || {};
+  if(!blogContents || !projects) {
+    return {noData: true};
+  }
 
   return (
     <div className="">
