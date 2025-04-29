@@ -3,9 +3,7 @@ import Image from "next/image";
 
 export const SuccessPrev = () => {
   return (
-    <div>
-      {" "}
-      <div className="min-h-screen bg-gradient-to-br from-[#1a2e1a] to-black flex items-center justify-center p-4 md:p-8">
+      <div className="min-h-screen bg-gradient-to-br from-[#1a2e1a] to-black flex items-center justify-center py-20 md:p-8">
         <div className="max-w-7xl w-full mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Left side heading */}
@@ -115,7 +113,7 @@ export const SuccessPrev = () => {
                     </div>
                   </div>
                   <h2 className="text-white text-6xl md:text-7xl font-bold mb-4">
-                    50+
+                    20+
                   </h2>
                   <p className="text-gray-300 text-lg">
                     We have 50+ professional team members on stand by ready to
@@ -127,6 +125,5 @@ export const SuccessPrev = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };

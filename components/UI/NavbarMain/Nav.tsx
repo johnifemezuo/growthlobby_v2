@@ -32,7 +32,7 @@ export default function Nav() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex md:items-center md:space-x-6 pl-6 pr-2 py-2 md:border  rounded-xl bg-white/70 backdrop-blur-md">
+        <div className="hidden md:flex md:items-center md:space-x-6 pl-6 pr-2 py-2 md:border  rounded-xl bg-white backdrop-blur-md">
           <Link
             href="/#services"
             className={`  text-white lg:text-sm font-medium hover:text-primary transition-all ${

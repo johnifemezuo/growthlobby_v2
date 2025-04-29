@@ -62,7 +62,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[300vh] bg-[#0F100D] py-40 lg:py-0 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[320vh] bg-[#0F100D] py-40 lg:py-0 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -133,7 +133,7 @@ export const Header = () => {
 
         <HeroRating />
 
-        <div className="flex w-full lg:w-auto bg-white border border-zinc-200 p-2  rounded-lg flex-row items-center justify-between lg:justify-center gap-2 mt-8">
+        <div className="flex w-full lg:w-auto bg-white border border-zinc-200 p-1  rounded-lg flex-row items-center justify-between lg:justify-center gap-2 mt-8">
           <Link
             href="/book"
             className="bg-gray-900 text-center text-white px-6 text-sm py-4 rounded-md hover:bg-black transition-colors w-full sm:w-auto"
@@ -142,7 +142,7 @@ export const Header = () => {
           </Link>
           <Link
             href="/pricing"
-            className="flex border text-sm items-center justify-center gap-2 px-6 py-4 rounded-md hover:bg-gray-100 transition-colors w-full sm:w-auto"
+            className="flex border text-sm items-center justify-center gap-2 px-6 py-4 bg-zinc-200 rounded-md hover:bg-gray-100 transition-colors w-full sm:w-auto"
           >
             CONTACT US <ArrowRight />
           </Link>
@@ -172,7 +172,7 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-96 w-[30rem] relative shrink-0"
+      className="group/product h-96 min-w-[30%] relative shrink-0"
     >
       <a href={product.link} className="block group-hover/product:shadow-2xl ">
         <Image

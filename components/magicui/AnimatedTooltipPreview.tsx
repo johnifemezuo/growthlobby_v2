@@ -35,7 +35,7 @@ const people = [
     name: "Osmond",
     designation: "Framer Developer",
     image:
-      "/images/t2.png",
+      "/images/osmond.png",
   },
   {
     id: 6,

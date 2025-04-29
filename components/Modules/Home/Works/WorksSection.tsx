@@ -7,7 +7,7 @@ import WorkCard from "./WorkCard";
 const WorksSection = ({ projects }: { projects: IProject[] }) => {
   return (
     <Container>
-      <div className="container mx-auto px-4 md:px-0 py-16 text-foreground md:w-[90%] 2xl:w-full">
+      <div className="container mx-auto px-4 md:px-0 py-16 text-foreground  2xl:w-full">
         {/* Header Section */}
         <ScrollReveal hidden={{ y: 50 }} visible={{ y: 0 }} duration={0.5}>
           <div className="mb-12 max-w-5xl ml-auto space-y-3 ">
@@ -23,7 +23,7 @@ const WorksSection = ({ projects }: { projects: IProject[] }) => {
 
         {/* Gallery Grid */}
         <ScrollReveal hidden={{ y: 100 }} visible={{ y: 0 }} duration={0.8}>
-          <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  gap-4 auto-rows-min   ">
+          <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  gap-4 w-full  ">
             {projects.map((project: IProject, i: number) => (
               <WorkCard
                 title={project?.title}

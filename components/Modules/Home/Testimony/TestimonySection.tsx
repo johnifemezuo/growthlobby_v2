@@ -4,26 +4,26 @@ import Image from "next/image";
 const clientsProfile = [
   {
     id: "01",
-    name: "Alex M.",
-    position: "CEO of Innovative Tech",
-    image: "/images/Ellipse-2.png",
+    name: "Stanley O.",
+    position: "CEO Ventlio & Osmaxin",
+    image: "/images/stanley.enc",
     testimony:
-      "Growthlobby transformed our vision into a sleek, user-friendly platform that exceeded our expectations. Their collaborative approach made the entire process seamless and enjoyable!",
+      "When it comes to delivering a high-quality user interface and experience working GrowthLobby has been a game changer for our team at Osmaxin, it has never been a bad choice for us and I will always bet on them to deliver a design no matter the complexity of the product because they always get it right"
   },
   {
     id: "02",
-    name: "Sarah L.",
-    position: " Managing Director at Peak Solutions",
-    image: "/images/Ellipse-1.png",
+    name: "Gloria C.",
+    position: "Product Manager Exportpadi",
+    image: "/images/gloria.webp",
     testimony:
-      "Working with Growthlobby was a game-changer. Their design and development expertise brought our brand to life, setting us apart in a competitive market.",
+      "John was incredible. He delivered all my deliverables on time and was very proactive, helping me make suggestions and explaining everything I got confused with. I'd recommend him and his team ten times again.",
   },
 
   {
     id: "03",
-    name: "James P.",
-    position: " Founder of GreenWave",
-    image: "/images/Ellipse-2.png",
+    name: "Tobilola O.",
+    position: " CEO WITFORD",
+    image: "/images/tobi.enc",
     testimony:
       "From concept to execution, Growthlobby’s team was exceptional. They delivered a responsive website that perfectly matches our brand and engages our audience effortlessly.",
   },
@@ -81,15 +81,14 @@ const TestimonySection = () => {
                     className="h-12 w-12 md:h-16 md:w-16 "
                   />
                 </div>
-                <div className="flex flex-col md:flex-row items-center gap-2 m-auto">
-                  <div className="">
-                    {" "}
+                <div className="flex flex-col md:flex-row items-center gap-2 lg:gap-5 m-auto">
+                  <div className="rounded-full overflow-hidden border-2 border-white w-[100px] h-[100px]">
                     <Image
                       width={100}
                       height={100}
                       src={profile.image}
                       alt="Happiness"
-                      className="w-auto md:w-4/5 m-auto"
+                      className="w-full h-full m-auto object-cover"
                     />
                   </div>
                   <div className="flex flex-col text-center md:text-left">

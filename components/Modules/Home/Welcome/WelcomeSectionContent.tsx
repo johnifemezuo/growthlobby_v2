@@ -4,11 +4,11 @@ import React from "react";
 const WelcomeSectionContent = () => {
   return (
     <div className="text-[#808080] font-wixMadefor md:text-[28px] text-[20px] leading-normal font-semibold md:w-[45%] flex flex-col md:gap-6 gap-4 ">
-          <TextReveal>Welcome to Growthlobby,where creativity meets strategy. We are a passionate collective of designers, developers, and visionaries, dedicated to transforming B2B digital innovation into unforgettable stories.</TextReveal>
+          <TextReveal>At Growthlobby, we are a passionate team of designers dedicated to transforming brands into powerful tools for success. Our expertise lies in crafting stunning designs that help businesses achieve their goals, attract more clients, and gain the recognition they deserve.</TextReveal>
           
-          <TextReveal>We don’t just create; we craft powerful brands, stunning websites, and cutting-edge apps that resonate, bridging the gap between vision and reality reality.</TextReveal>
+          <TextReveal>From captivating graphics to intuitive UI/UX designs, our work ensures your brand stands out in a crowded marketplace.</TextReveal>
           
-          <TextReveal>Our collaborative approach ensures that every project is an enriching journey, making the process as rewarding as the ground-breaking results we deliver.</TextReveal>
+          <TextReveal>We don’t just design; we create experiences that resonate with your audience and drive results. Let’s bring your vision to life and help your brand leave an unforgettable impression.</TextReveal>
           
     </div>
   );

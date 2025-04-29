@@ -15,9 +15,9 @@ interface FaqItem {
 const faqItems: FaqItem[] = [
   {
     id: 1,
-    question: "Do you have a minimum engagement?",
+    question: "What services does your agency offer?",
     answer:
-      "We set no entry thresholds for people who want to work with us. But we still believe that a product that needs to be designed can't be made within a couple of days. After all, we need some time to research, analyze and come up with a strategy. So we've set a minimum project duration as 30 hours and we're waiting for you!",
+      "We provide a variety of design solutions, including UI/UX design, graphic design, illustration, logo design, motion design, and website development.",
   },
   {
     id: 2,

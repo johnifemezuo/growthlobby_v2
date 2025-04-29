@@ -23,7 +23,7 @@ const HomeHeroSection = () => {
   return (
     <div className=" lg:pt-12 lg:h-auto font-wixMadefor text-white bg-[#0F100D] flex flex-col">
       <svg
-        className="absolute left-0 top-0 w-[300px] lg:w-[500px] svg-1"
+        className="absolute left-0 top-0 w-[300px] lg:w-[500px] "
         width="715"
         height="773"
         viewBox="0 0 715 773"
@@ -103,7 +103,7 @@ const HomeHeroSection = () => {
       </svg>
 
       <svg
-        className="absolute svg-1 top-20 inset-x-0 h-[880px] w-[400px] lg:w-[700px] mx-auto"
+        className="absolute top-20 inset-x-0 h-[880px] w-[400px] lg:w-[700px] mx-auto"
         width="878"
         height="863"
         viewBox="0 0 878 863"

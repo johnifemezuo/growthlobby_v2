@@ -16,7 +16,7 @@ const StackStatistics = () => {
 
         {/* Web Developers */}
         <div className="flex flex-col items-center md:flex-row md:items-center gap-4 ">
-          <span className="text-white text-4xl md:text-5xl font-bold">4+</span>
+          <span className="text-white text-4xl md:text-5xl font-bold">10+</span>
           <span className="text-gray-400 text-sm tracking-wider text-center md:text-left md:font-medium font-medium">
             <p>GRAPHICS</p>
             <p>DESIGNER</p>

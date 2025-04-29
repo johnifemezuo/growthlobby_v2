@@ -4,55 +4,11 @@ import Image from "next/image";
 const HeroRating = () => {
   return (
     <div className="lg:flex items-center space-x-3 lg:space-x-6 px-4 lg:px-0">
-      {/* <div className="flex -space-x-3 lg:-space-x-4 border-r pr-3">
-        <Image
-          src="/images/user1.png"
-          alt=""
-          width={50}
-          height={50}
-          className="rounded-full w-[33px] h-[33px] lg:w-[45px] lg:h-[45px] object-cover border"
-        />
-        <Image
-          src="/images/user2.png"
-          alt=""
-          width={50}
-          height={50}
-          className="rounded-full w-[33px] h-[33px] lg:w-[45px] lg:h-[45px] object-cover border"
-        />
-        <Image
-          src="/images/user3.png"
-          alt=""
-          width={50}
-          height={50}
-          className="rounded-full w-[33px] h-[33px] lg:w-[45px] lg:h-[45px] object-cover border"
-        />
-        <Image
-          src="/images/user4.png"
-          alt=""
-          width={50}
-          height={50}
-          className="rounded-full w-[33px] h-[33px] lg:w-[45px] lg:h-[45px] object-cover border"
-        />
-        <Image
-          src="/images/user5.png"
-          alt=""
-          width={50}
-          height={50}
-          className="rounded-full w-[33px] h-[33px] lg:w-[45px] lg:h-[45px] object-cover border"
-        />
-        <Image
-          src="/images/googleicon.png"
-          alt=""
-          width={50}
-          height={50}
-          className="rounded-full w-[30px] h-[30px] object-cover border"
-        />
-      </div> */}
 
       <AnimatedTooltipPreview />
 
       <div className="flex flex-col -mt-5 justify-center space-y-0  min-w-[200px]">
-        <div className="flex space-x-1 items-center justify-center lg:justify-start">
+        <div className="flex space-x-1 items-center justify-center lg:justify-center">
           <div className="flex -space-x-2 mt-5 lg:mt- ">
             <Image
               src="/images/svg/star.svg"
@@ -94,7 +50,7 @@ const HeroRating = () => {
           <p className="lg:text-xl font-medium text-zinc-600 mt-5">5.0</p>
         </div>
 
-        <p className=" text-xs mt-2  text-center lg:t text-zinc-700 font-medium">
+        <p className=" text-xs mt-2  text-center lg:t text-zinc-400 font-medium">
           Working for Over 200+ businesses worldwide
         </p>
       </div>
