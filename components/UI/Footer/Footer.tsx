@@ -23,7 +23,7 @@ const Footer = () => {
               duration={1}
             >
       <Container>
-        <div className="max-w-7xl mx-auto bg-[#EDEDED] min-h-fit h-auto md:py-12 md:px-4 py-8 px-4 rounded-3xl space-y-8 mb-6 md:mb-12">
+        <div className="max-w-7xl mx-auto bg-[#EDEDED] min-h-fit h-auto md:pt-12 md:px-4 py-8 px-4 rounded-3xl space-y-8 ">
           <nav className="flex flex-col md:grid md:grid-cols-3 md:items-start md:gap-4 p-6">
             <div className="w-full md:self-start">
               <Image
@@ -85,8 +85,13 @@ const Footer = () => {
             </h1>
           </div>
         </div>
+      <div className="flex items-center justify-between mt-3 ">
+        <Link href="/terms" className="text-sm text-zinc-500  transition-all">Privacy Policy</Link>
+        <Link href="/terms" className="text-sm text-zinc-500 transition-all">Terms and condition </Link>
+        </div>
       </Container>
       </ScrollReveal>
+
     </footer>
   );
 };
