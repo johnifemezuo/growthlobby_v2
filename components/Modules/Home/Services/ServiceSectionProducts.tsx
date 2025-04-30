@@ -66,7 +66,7 @@ const ServiceSectionProducts = () => {
   // const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
-    <div className="max-w-full mx-auto space-y-12 mt-9">
+    <div className="max-w-full mx-auto space-y-9 lg:space-y-12 mt-9">
       {products.map((product) => (
         <div
           key={product.id}
@@ -87,14 +87,14 @@ const ServiceSectionProducts = () => {
 
           {/* Smooth Reveal Effect on Hover */}
           <div
-            className={`relative overflow-hidden z-50 border rounded-lg border-zinc-700 lg:absolute right-3 opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500`}
+            className={`relative overflow-hidden z-50 border rounded-lg border-zinc-700 lg:absolute lg:right-3 lg:opacity-0 lg:translate-y-10 group-lg:hover:opacity-100 lg:group-hover:translate-y-0 transition-all duration-500`}
           >
             <Image
               src={product.image}
               alt={product.title}
               width={600}
               height={450}
-              className="object-cover rounded lg:w-[350px] "
+              className="object-cover rounded max-w-[300px] lg:w-[350px]  h-[150px] lg:h-auto"
             />
           </div>
         </div>

@@ -7,7 +7,7 @@ const HeroRating = () => {
 
       <AnimatedTooltipPreview />
 
-      <div className="flex flex-col -mt-5 justify-center space-y-0  min-w-[200px]">
+      <div className="flex flex-col  lg:-mt-5 justify-center space-y-0  min-w-[200px]">
         <div className="flex space-x-1 items-center justify-center lg:justify-center">
           <div className="flex -space-x-2 mt-5 lg:mt- ">
             <Image

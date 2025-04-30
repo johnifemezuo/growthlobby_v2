@@ -25,7 +25,7 @@ export const TextReveal: FC<TextRevealProps> = ({ children, className }) => {
     <div ref={targetRef} className={cn("relative z-0 h-[220vh] transition-all duration-500 ", className)}>
       <div
         className={
-          "sticky top-0 mx-auto flex h-[50%]  min-w-[400px] items-center bg-transparent px-0 py-[5rem] transition-all duration-500"
+          "sticky top-0 mx-auto flex h-[50%]  lg:min-w-[400px] items-center bg-transparent px-0 py-[5rem] transition-all duration-500"
         }
       >
         <span

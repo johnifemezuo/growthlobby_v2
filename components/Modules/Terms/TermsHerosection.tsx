@@ -1,9 +1,13 @@
 "use client";
 import { AnimatedShinyTextDemo } from "@/components/Animations/AnimatedShinyTextDemo";
 import { Container } from "@/components/Container/Container";
-import ContactComp from "@/components/UI/ContactComp";
 
-const WorkHeroSection = () => {
+const TermsHeroSection = ({ date }: { date: string }) => {
+  const formattedDate = new Date(date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
   return (
     <div className="h-auto w-full relative bg-white py-20 lg:py-20  overflow-hidden">
       <svg
@@ -129,18 +133,18 @@ const WorkHeroSection = () => {
       <Container>
         <div className="flex flex-col justify-center items-center h-full  px-5 lg:px-0">
           <div className="text-center py-8 lg:pt-20 space-y-5 max-w-[700px] mx-auto px-4 lg:px-0">
-            <AnimatedShinyTextDemo text="WHAT WE DO BEST.✨" />
+            <AnimatedShinyTextDemo text="TERMS OF SERVICE.✨" />
 
             <h1 className="text-4xl max-w-2xl  mx-auto font-bold lg:text-4xl xl:text-6xl font-serif">
-              <span className="italic font-light">OUR PROJECTS</span>
+              <span className="font-light">Terms And Condition</span>
             </h1>
-          </div>
 
-          <ContactComp />
+            <p className="text-base lg:text-xl">Lasted Updated on the {formattedDate}</p>
+          </div>
         </div>
       </Container>
     </div>
   );
 };
 
-export default WorkHeroSection;
+export default TermsHeroSection;

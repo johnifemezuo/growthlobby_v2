@@ -6,9 +6,9 @@ import Image from 'next/image'
 
 const HeroCaroselDesc = () => {
   return (
-          <div className="overflow-hidden w-full md:my-6 ">
+          <div className="overflow-hidden w-full md:my-6 py-6">
           <motion.div
-          className="flex items-center font-semibold text-2xl md:text-7xl space-x-6 whitespace-nowrap"
+          className="flex items-center font-semibold text-3xl md:text-7xl space-x-6 whitespace-nowrap"
           animate={{ x: ["100%", "-100%"] }}
           transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
         >

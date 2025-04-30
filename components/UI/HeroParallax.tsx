@@ -7,11 +7,10 @@ import {
   useTransform,
 } from "motion/react";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import { AnimatedShinyTextDemo } from "../Animations/AnimatedShinyTextDemo";
-import { ArrowRight } from "../Icons/ArrowRight";
 import HeroRating from "../Modules/Home/Herosection/HeroRating";
+import ContactComp from "./ContactComp";
 import { FlipWords } from "./FlipWords";
 
 export const HeroParallax = ({
@@ -62,7 +61,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[320vh] bg-[#0F100D] py-40 lg:py-0 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[270vh] lg:h-[320vh] bg-[#0F100D] py-40 lg:py-0 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:400px] lg:[perspective:700px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -108,12 +107,12 @@ export const HeroParallax = ({
 
 export const Header = () => {
   const words1 = ["Design"];
-  const words2 = ["Motion", "Illustration", "Development"];
+  const words2 = ["Motion", "Illustration", "Graphics"];
 
   return (
-    <div className="bg-[#0F100D relative mx-auto z-50 py-20 md:py-0 lg:py-20 px-4 w-full  left-0 top-0">
-      <div className="flex flex-col justify-center items-center h-full  px-5 lg:px-0">
-        <div className="text-center py-8 lg:pt-20 space-y-5 max-w-[700px] mx-auto px-4 lg:px-0">
+    <div className="bg-[#0F100D relative mx-auto z-50 py-0 md:py-0 lg:py-20 px-4 w-full  left-0 top-0">
+      <div className="flex flex-col -mt-8 md:mt-0 justify-center items-center h-full  lg:px-0">
+        <div className="text-center w-full py-8 lg:pt-20 space-y-5 lg:max-w-[700px] mx-auto px-4 lg:px-0">
           <AnimatedShinyTextDemo text="Elevate your Digital Presence.✨" />
 
           <div className="text-4xl text-zinc-200 max-w-2xl  mx-auto font-bold lg:text-4xl xl:text-6xl font-serif">
@@ -133,20 +132,7 @@ export const Header = () => {
 
         <HeroRating />
 
-        <div className="flex w-full lg:w-auto bg-white border border-zinc-200 p-1  rounded-lg flex-row items-center justify-between lg:justify-center gap-2 mt-8">
-          <Link
-            href="/book"
-            className="bg-gray-900 text-center text-white px-6 text-sm py-4 rounded-md hover:bg-black transition-colors w-full sm:w-auto"
-          >
-            BOOK A CALL
-          </Link>
-          <Link
-            href="/pricing"
-            className="flex border text-sm items-center justify-center gap-2 px-6 py-4 bg-zinc-200 rounded-md hover:bg-gray-100 transition-colors w-full sm:w-auto"
-          >
-            CONTACT US <ArrowRight />
-          </Link>
-        </div>
+        <ContactComp />
       </div>
     </div>
   );
@@ -172,7 +158,7 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-96 min-w-[30%] relative shrink-0"
+      className="group/product h-[220px] lg:h-96 w-[300px]  lg:min-w-[30%] relative shrink-0"
     >
       <a href={product.link} className="block group-hover/product:shadow-2xl ">
         <Image

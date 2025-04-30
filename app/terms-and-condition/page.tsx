@@ -1,0 +1,29 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
+
+import { TERMS_QUERY } from "@/base/query/terms";
+import { PageContainer } from "@/components/Container/PageContainer";
+import TermsHeroSection from "@/components/Modules/Terms/TermsHerosection";
+import { useQuery } from "@apollo/client";
+import parse from "html-react-parser";
+
+export default function TermsPage() {
+  const { data, loading } = useQuery<any>(TERMS_QUERY);
+  const content = data?.termsAndConditions[0] ?? {};
+
+  return (
+      <div>
+        {loading ? (
+          <div className="w-full h-screen bg-zinc-50 ">Loading...</div>
+        ) : (
+          <div>
+            <TermsHeroSection date={content.publishedAt} />
+
+            <PageContainer>
+              <div className="pageStyle">{parse(content.content.html)}</div>
+            </PageContainer>
+          </div>
+        )}
+      </div>
+  );
+}

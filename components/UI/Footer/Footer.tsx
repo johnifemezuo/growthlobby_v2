@@ -86,8 +86,8 @@ const Footer = () => {
           </div>
         </div>
       <div className="flex items-center justify-between mt-3 ">
-        <Link href="/terms" className="text-sm text-zinc-500  transition-all">Privacy Policy</Link>
-        <Link href="/terms" className="text-sm text-zinc-500 transition-all">Terms and condition </Link>
+        <Link href="/privacy-policy" className="text-sm text-zinc-500  transition-all">Privacy Policy</Link>
+        <Link href="/terms-and-condition" className="text-sm text-zinc-500 transition-all">Terms and condition </Link>
         </div>
       </Container>
       </ScrollReveal>

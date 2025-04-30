@@ -14,18 +14,18 @@ const BrandCompany = () => {
 
 
           <div>
-            <div className="flex flex-wrap justify-center items-center gap-4 mt-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 lg:flex-wrap justify-center items-center gap-4 mt-8">
               <div className="w-auto h-[150px] lg:h-[110px] bg-white border rounded-lg p-8 flex items-center justify-center">
-                <Image width={200} height={200} src="/images/witford-logo.png" alt="Logo 1" className="w-full h-full object-cover lg:w-44" />
+                <Image width={200} height={200} src="/images/witford-logo.png" alt="Logo 1" className="w-[120px] h-auto lg:h-full object-cover lg:w-44" />
               </div>
-              <div className=" bg-white border lg:h-[110px] rounded-lg p-8 flex items-center justify-center">
-                <Image width={150} height={150} src="/images/rushbill-logo.png" alt="Logo 1" className="w-full h-full object-cover c" />
-              </div>
-              <div className="w-auto h-[150px]  lg:h-[110px] bg-white border rounded-lg p-8 flex items-center justify-center">
-                <Image width={150} height={150} src="/images/osmaxin-logo.webp" alt="Logo 1" className="w-full h-full object-cover " />
+              <div className="w-auto h-[150px] lg:h-[110px] bg-white border rounded-lg p-8 flex items-center justify-center">
+                <Image width={150} height={150} src="/images/rushbill-logo.png" alt="Logo 1" className="w-[120px] h-auto lg:h-full object-cover lg:w-44" />
               </div>
               <div className="w-auto h-[150px]  lg:h-[110px] bg-white border rounded-lg p-8 flex items-center justify-center">
-                <Image width={150} height={150} src="/images/aleodev-logo.png" alt="Logo 1" className="w-full h-full object-cover " />
+                <Image width={150} height={150} src="/images/osmaxin-logo.webp" alt="Logo 1" className="w-[120px] h-auto lg:h-full object-cover lg:w-44 " />
+              </div>
+              <div className="w-auto h-[150px]  lg:h-[110px] bg-white border rounded-lg p-8 flex items-center justify-center">
+                <Image width={150} height={150} src="/images/aleodev-logo.png" alt="Logo 1" className="w-[120px] h-auto lg:h-full object-cover lg:w-44" />
               </div>
             </div>
           </div>

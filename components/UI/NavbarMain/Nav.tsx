@@ -13,7 +13,7 @@ export default function Nav() {
   return (
     <div
       id="top"
-      className=" lg:w-[690px] lg:bg-transparent bg-white lg:backdrop-blur-none backdrop-blur-md lg:border-none border-none lg:border  justify-center w-full  mx-auto z-50 fixed  inset-x-0 px-3  py-3 lg:py-5  "
+      className=" lg:w-[690px] lg:bg-transparent bg-transparent lg:backdrop-blur-none w-full backdrop-blur-md lg:border-none border-none lg:border  justify-center  mx-auto z-50 fixed top-0 inset-x-0 px-3  py-3 lg:py-5  "
     >
       <div className="flex  h-16 items-center justify-between space-x-4 md:space-x-6 md:justify-between">
         {/* Logo */}
@@ -81,9 +81,10 @@ export default function Nav() {
             
         </div>
 
+        {/* Hamburger Menu Icon for Mobile */}  
         <div
           onClick={() => setIsOpen(!isOpen)}
-          className=" md:hidden bg-black rounded-full w-12 h-12 grid place-content-center"
+          className=" border-white/50 border md:hidden bg-black rounded-full w-12 h-12 grid place-content-center"
         >
           <svg
             width="24"

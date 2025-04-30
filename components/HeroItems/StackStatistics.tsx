@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const StackStatistics = () => {
   return (
-    <div className="flex justify-around border-t border-gray-700 pt-8">
+    <div className=" hidden lg:flex justify-around border-t border-gray-700 py-8">
       <div className="flex justify-between items-center w-full">
         {/* Product Designers */}
         <div className="flex flex-col items-center md:flex-row md:items-center gap-4">
@@ -12,6 +12,7 @@ const StackStatistics = () => {
             <p>DESIGNERS</p>
           </span>
         </div>
+
         <div className="border-l border-gray-700 w-1 hidden md:block mx-auto"></div>
 
         {/* Web Developers */}
@@ -22,6 +23,7 @@ const StackStatistics = () => {
             <p>DESIGNER</p>
           </span>
         </div>
+        
         <div className="border-l border-gray-700 w-1 hidden md:block mx-auto"></div>
 
         {/* Mobile App Developers */}
