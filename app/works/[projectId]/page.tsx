@@ -9,6 +9,7 @@ import { ProjectDetails } from "@/components/Modules/Works/ProjectDetails";
 import WorkDetailHeroSection from "@/components/Modules/Works/WorkHeroSection/WorkDetailHeroSection";
 import { useQuery } from "@apollo/client";
 import Head from "next/head";
+import { Suspense } from "react";
 
 export default function ProjectDetailPage({ params }: any) {
   const projectId = params.projectId;
@@ -24,7 +25,7 @@ export default function ProjectDetailPage({ params }: any) {
   const otherProjects = others?.projects || [];
 
   return (
-    <div>
+    <Suspense fallback={<div className="w-full h-screen bg-zinc-50 "></div>}>
       <Head>
         <title>Osmaxin | Works | </title>
       </Head>
@@ -50,6 +51,6 @@ export default function ProjectDetailPage({ params }: any) {
           />
         </div>
       )}
-    </div>
+    </Suspense>
   );
 }

@@ -14,6 +14,7 @@ import TestimonySection from "@/components/Modules/Home/Testimony/TestimonySecti
 import WelcomeSection from "@/components/Modules/Home/Welcome/WelcomeSection";
 import WorksSection from "@/components/Modules/Home/Works/WorksSection";
 import { useQuery } from "@apollo/client";
+import { Suspense } from "react";
 
 export default function Home() {
   const { data, loading:loadingBlog } = useQuery<IBlogData>(BLOG_FEATURED_QUERY);
@@ -24,7 +25,7 @@ export default function Home() {
   const projects = work?.projects.slice(0, 6) || [];
 
   return (
-    <>
+    <Suspense fallback={<div className="w-full h-screen bg-zinc-50 "></div>}>
       <HeroParallaxDemo />
       <WelcomeSection />
       <ServicesSection />
@@ -34,6 +35,6 @@ export default function Home() {
       <TestimonySection />
       {loadingBlog ? <div>Loading...</div> : <BlogSection posts={blogContents} />}
       <FaqSection />
-    </>
+    </Suspense>
   );
 }

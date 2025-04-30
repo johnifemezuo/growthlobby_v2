@@ -6,13 +6,14 @@ import { PageContainer } from "@/components/Container/PageContainer";
 import PrivacyPolicyHerosection from "@/components/Modules/privacy/PrivacyPolicyHerosection";
 import { useQuery } from "@apollo/client";
 import parse from "html-react-parser";
+import { Suspense } from "react";
 
 export default function TermsPage() {
   const { data, loading } = useQuery<any>(POLICY_QUERY);
   const content = data?.privacyPolicies[0] ?? {};
 
   return (
-    <div>
+    <Suspense fallback={<div className="w-full h-screen bg-zinc-50 "></div>}>
       {loading ? (
         <div className=""></div>
       ) : (
@@ -24,6 +25,6 @@ export default function TermsPage() {
           </PageContainer>
         </div>
       )}
-    </div>
+    </Suspense>
   );
 }

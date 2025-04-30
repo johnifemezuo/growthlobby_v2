@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { usePathname, useSearchParams } from "next/navigation"; // Use next/navigation hooks
+import { usePathname } from "next/navigation"; // Use next/navigation hooks
 import { useEffect, useState } from "react";
 import Footer from "../UI/Footer/Footer";
 import Nav from "../UI/NavbarMain/Nav";
@@ -12,7 +12,6 @@ export const PageLayout = ({ children }: { children?: React.ReactNode }) => {
   const [imageAnimationClass, setImageAnimationClass] = useState(""); // Manage image animation class
   const [imageAnimationClass2, setImageAnimationClass2] = useState(""); // Manage image animation class
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     setIsLoading(true);
@@ -38,7 +37,7 @@ export const PageLayout = ({ children }: { children?: React.ReactNode }) => {
       setImageAnimationClass("translate-x-0"); // Add class to reset translate-x
       setImageAnimationClass2("-translate-x-0");
     };
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   return (
     <div>

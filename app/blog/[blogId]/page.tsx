@@ -6,7 +6,7 @@ import { BLOG_DETAIL_QUERY, RELATED_BLOG_QUERY } from "@/base/query/blog";
 import { BlogDetailContent } from "@/components/Modules/BlogPage/BlogDetailContent";
 import { useSuspenseQuery } from "@apollo/client";
 import Head from "next/head";
-import { use } from "react";
+import { Suspense, use } from "react";
 
 export default function BlogDetailPage({ params }: any) {
   const resolvedParams: any = use(params);
@@ -27,12 +27,12 @@ export default function BlogDetailPage({ params }: any) {
   const otherPosts = relatedPosts?.blogs || {};
 
   return (
-    <div>
+    <Suspense fallback={<div className="w-full h-screen bg-zinc-50 "></div>}>
       <Head>
         <title>Growthlobby | Blog | {blog.title} </title>
       </Head>
 
       <BlogDetailContent details={blog} otherPosts={otherPosts} />
-    </div>
+    </Suspense>
   );
 }
