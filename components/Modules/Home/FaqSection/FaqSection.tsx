@@ -67,7 +67,7 @@ export default function FaqSection() {
   return (
     <div className="w-full bg-[#0A0B0B] py-12 lg:py-28 px-5 xl:px-0">
       <svg
-        className="absolute left-0 top-0 w-[300px] lg:w-[800px] svg-1"
+        className="absolute left-0 top-0 w-[300px] lg:w-[800px] svg-1 z-0"
         width="715"
         height="773"
         viewBox="0 0 715 773"

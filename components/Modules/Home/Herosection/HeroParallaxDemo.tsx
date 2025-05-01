@@ -5,95 +5,80 @@ import React from "react";
 
 export const products = [
   {
-    title: "Moonbeam",
-    link: "https://gomoonbeam.com",
+    title: "Mobile App Design",
     thumbnail:
       "/images/d-1.webp",
   },
   {
-    title: "Cursor",
-    link: "https://cursor.so",
+    title: "Interaction Design",
     thumbnail:
       "/images/d-2.webp",
   },
   {
-    title: "Rogue",
-    link: "https://userogue.com",
+    title: "illustration",
     thumbnail:
       "/images/ill-1.webp",
   },
 
   {
-    title: "Editorially",
-    link: "https://editorially.org",
+    title: "App Design",
     thumbnail:
       "/images/d-4.webp",
   },
   {
     title: "Editrix AI",
-    link: "https://editrix.ai",
     thumbnail:
       "/images/d-5.webp",
   },
   {
     title: "Pixel Perfect",
-    link: "https://app.pixelperfect.quest",
     thumbnail:
       "/images/d-3.webp",
   },
 
   {
-    title: "Algochurn",
-    link: "https://algochurn.com",
+    title: "Mobile App Design",
     thumbnail:
       "/images/p-2.webp",
   },
   {
-    title: "Aceternity UI",
-    link: "https://ui.aceternity.com",
+    title: "Website Design",
     thumbnail:
       "/images/p-3.webp",
   },
   {
-    title: "Tailwind Master Kit",
-    link: "https://tailwindmasterkit.com",
+    title: "Website Developement",
     thumbnail:
       "/images/p-4.webp",
   },
   {
-    title: "SmartBridge",
-    link: "https://smartbridgetech.com",
+    title: "Mobile App Design",
     thumbnail:
       "/images/p-5.webp",
   },
   {
     title: "Renderwork Studio",
-    link: "https://renderwork.studio",
     thumbnail:
       "/images/p-6.webp",
   },
 
   {
-    title: "Creme Digital",
-    link: "https://cremedigital.com",
+    title: "Graphics Design",
     thumbnail:
       "/images/pad-1.png",
   },
   {
-    title: "Golden Bells Academy",
-    link: "https://goldenbellsacademy.com",
+    title: "Social Media Post Designs",
     thumbnail:
       "/images/pad-2.png",
   },
   {
-    title: "Invoker Labs",
-    link: "https://invoker.lol",
+    title: "Creative Design",
     thumbnail:
       "/images/pad-3.png",
   },
   {
-    title: "E Free Invoice",
-    link: "https://efreeinvoice.com",
+    title: "Graphics",
     thumbnail:
       "/images/pad-4.png",
   },

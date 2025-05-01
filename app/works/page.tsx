@@ -19,7 +19,11 @@ export default function OurWorksPage() {
         <title>Growthlobby | Work </title>
       </Head>
       <HeroSection />
-      {loading ? <div> Loading... </div> : <WorkSample projects={projects as IProject[]} />}
+      {loading ? (
+        <div> Loading... </div>
+      ) : (
+        <WorkSample projects={projects as IProject[]} />
+      )}
     </Suspense>
   );
 }

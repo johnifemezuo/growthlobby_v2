@@ -18,7 +18,6 @@ export const HeroParallax = ({
 }: {
   products: {
     title: string;
-    link: string;
     thumbnail: string;
   }[];
 }) => {
@@ -61,7 +60,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[270vh] lg:h-[320vh] bg-[#0F100D] py-40 lg:py-0 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:400px] lg:[perspective:700px] [transform-style:preserve-3d]"
+      className="h-[270vh] relative z-0 lg:h-[320vh] bg-[#0F100D] py-40 lg:py-0 overflow-hidden  antialiased  flex flex-col self-auto [perspective:400px] lg:[perspective:700px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -111,8 +110,8 @@ export const Header = () => {
 
   return (
     <div className="bg-[#0F100D relative mx-auto z-50 py-0 md:py-0 lg:py-20 px-4 w-full  left-0 top-0">
-      <div className="flex flex-col -mt-8 md:mt-0 justify-center items-center h-full  lg:px-0">
-        <div className="text-center w-full py-8 lg:pt-20 space-y-5 lg:max-w-[700px] mx-auto px-4 lg:px-0">
+      <div className="flex flex-col r -mt-8 md:mt-0 justify-center items-center h-full  lg:px-0">
+        <div className="text-center z-50 relative w-full py-8 lg:pt-20 space-y-5 lg:max-w-[700px] mx-auto px-4 lg:px-0">
           <AnimatedShinyTextDemo text="Elevate your Digital Presence.✨" />
 
           <div className="text-4xl text-zinc-200 max-w-2xl  mx-auto font-bold lg:text-4xl xl:text-6xl font-serif">
@@ -144,7 +143,6 @@ export const ProductCard = ({
 }: {
   product: {
     title: string;
-    link: string;
     thumbnail: string;
   };
   translate: MotionValue<number>;
@@ -158,9 +156,9 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-[220px] lg:h-96 w-[300px]  lg:min-w-[30%] relative shrink-0"
+      className="group/product cursor-pointer h-[220px] lg:h-96 w-[300px]  lg:min-w-[30%] relative shrink-0"
     >
-      <a href={product.link} className="block group-hover/product:shadow-2xl ">
+      <div className="block group-hover/product:shadow-2xl ">
         <Image
           src={product.thumbnail}
           height={600}
@@ -168,8 +166,8 @@ export const ProductCard = ({
           className="object-cover object-left-top absolute h-full w-full inset-0"
           alt={product.title}
         />
-      </a>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
+      </div>
+      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-40 bg-black pointer-events-none"></div>
       <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
         {product.title}
       </h2>

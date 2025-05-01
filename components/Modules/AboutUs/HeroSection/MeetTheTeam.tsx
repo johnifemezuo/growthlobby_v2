@@ -5,7 +5,7 @@ const MeetTheTeam = () => {
   return (
     <div className="h-auto lg:h-screen w-full relative bg-[#0B0B0A] py-20 lg:py-20  overflow-hidden">
       <svg
-        className="absolute left-0 top-0 w-[300px] lg:w-[500px] svg-1"
+        className="absolute left-0 top-0 w-[300px] lg:w-[500px] svg-1 z-0"
         width="715"
         height="773"
         viewBox="0 0 715 773"
@@ -85,7 +85,7 @@ const MeetTheTeam = () => {
       </svg>
 
       <svg
-        className="absolute svg-1 top-20 inset-x-0 h-[880px] w-[400px] lg:w-[700px] mx-auto"
+        className="absolute svg-1 z-0 top-20 inset-x-0 h-[880px] w-[400px] lg:w-[700px] mx-auto"
         width="878"
         height="863"
         viewBox="0 0 878 863"

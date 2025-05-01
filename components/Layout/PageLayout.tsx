@@ -69,3 +69,4 @@ export const PageLayout = ({ children }: { children?: React.ReactNode }) => {
     </div>
   );
 };
+ 

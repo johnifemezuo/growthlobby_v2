@@ -14,6 +14,7 @@ const wixMadefor = Wix_Madefor_Display({
 export const metadata: Metadata = {
   title: "Growthlobby : Design + Code Agency",
   description: "Your web design partner",
+  icons: '/images/logo1.png',
 };
 
 export default function RootLayout({
@@ -23,6 +24,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/images/logo1.png" sizes="any" type="image/png"/>
+        <link rel="apple-touch-icon" href="/images/logo1.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="description" content="Your web design partner" />
+        <meta name="keywords" content="web design, development, agency, design agency, Nigeria" />
+        <meta name="author" content="Growthlobby" />
+        <meta property="og:title" content="Growthlobby" />
+        <meta property="og:description" content="Your web design partner" />
+        <meta property="og:image" content="/images/logo1.png" />
+        <meta property="og:url" content="https://growthlobby.com" />
+
+        </head>
       <body className={` ${wixMadefor.variable}  antialiased`}>
         <PageLayout>
           <ApolloWrapper>{children}</ApolloWrapper>

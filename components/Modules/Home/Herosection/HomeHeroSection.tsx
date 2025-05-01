@@ -23,7 +23,7 @@ const HomeHeroSection = () => {
   return (
     <div className=" lg:pt-12 lg:h-auto font-wixMadefor text-white bg-[#0F100D] flex flex-col">
       <svg
-        className="absolute left-0 top-0 w-[300px] lg:w-[500px] "
+        className="absolute left-0 top-0 w-[300px] lg:w-[500px] z-0"
         width="715"
         height="773"
         viewBox="0 0 715 773"
@@ -63,7 +63,7 @@ const HomeHeroSection = () => {
       </svg>
 
       <svg
-        className="absolute right-0 top-0 w-[300px] lg:w-[500px]"
+        className="absolute right-0 top-0 w-[300px] lg:w-[500px] z-0"
         width="642"
         height="670"
         viewBox="0 0 642 670"
@@ -103,7 +103,7 @@ const HomeHeroSection = () => {
       </svg>
 
       <svg
-        className="absolute top-20 inset-x-0 h-[880px] w-[400px] lg:w-[700px] mx-auto"
+        className="absolute top-20 z-0 inset-x-0 h-[880px] w-[400px] lg:w-[700px] mx-auto"
         width="878"
         height="863"
         viewBox="0 0 878 863"
@@ -143,7 +143,7 @@ const HomeHeroSection = () => {
       </svg>
 
       <Container>
-        <div className="flex flex-col justify-center items-center h-full  px-5 lg:px-0">
+        <div className="flex  flex-col justify-center items-center h-full  px-5 lg:px-0">
           <div className="text-center py-8 lg:pt-20 space-y-5 max-w-[700px] mx-auto px-4 lg:px-0">
             <AnimatedShinyTextDemo text="Elevate your Digital Presence.✨" />
 
