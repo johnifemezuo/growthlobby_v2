@@ -74,7 +74,7 @@ const ServiceSectionProducts = () => {
         >
           <div className="space-y-2">
             <div className="flex md:w-[60%] justify-between pt-5">
-              <h4 className="text-[var(--primary)] md:text-3xl hidden md:block font-semibold lg:w-[600px]">
+              <h4 className="text-[var(--primary)] n md:text-3xl hidden md:block font-semibold lg:w-[600px]">
                 {product.id}
               </h4>
               <div className="flex items-between gap-4 flex-col md:w-[500px] md:text-left">
@@ -87,7 +87,7 @@ const ServiceSectionProducts = () => {
 
           {/* Smooth Reveal Effect on Hover */}
           <div
-            className={`relative overflow-hidden z-50 border rounded-lg border-zinc-700 lg:absolute lg:right-3 lg:opacity-0 lg:translate-y-10 group-lg:hover:opacity-100 lg:group-hover:translate-y-0 transition-all duration-500`}
+            className={`relative overflow-hidden z-50 border rounded-lg border-zinc-700 lg:absolute lg:right-3 lg:opacity-0 lg:translate-y-10 group-hover:lg:opacity-100 lg:group-hover:translate-y-0 transition-all duration-500`}
           >
             <Image
               src={product.image}

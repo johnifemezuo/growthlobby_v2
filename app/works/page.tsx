@@ -11,8 +11,8 @@ import { Suspense } from "react";
 export default function OurWorksPage() {
   const { data, loading } = useQuery<IProjectData>(PROJECT_QUERY);
 
-  const projects = data?.projects || {};
-
+  const projects = data?.growthlobbyCaseStudies || {};
+  console.log(projects)
   return (
     <Suspense fallback={<div className="w-full h-screen bg-zinc-50 "></div>}>
       <Head>
@@ -20,7 +20,7 @@ export default function OurWorksPage() {
       </Head>
       <HeroSection />
       {loading ? (
-        <div> Loading... </div>
+        <div className="bg-zinc-50 w-full py-20 px-20 text-center"> Loading... </div>
       ) : (
         <WorkSample projects={projects as IProject[]} />
       )}

@@ -3,7 +3,7 @@
 import { IBlogData } from "@/base/interface/IBlog";
 import { IProjectData } from "@/base/interface/IProject";
 import { BLOG_FEATURED_QUERY } from "@/base/query/blog";
-import { PROJECT_QUERY } from "@/base/query/project";
+import { FEATURED_PROJECT_QUERY } from "@/base/query/project";
 import BlogSection from "@/components/Modules/Home/BlogSection/BlogSection";
 import BrandCompany from "@/components/Modules/Home/BrandCompany/BrandCompany";
 import FaqSection from "@/components/Modules/Home/FaqSection/FaqSection";
@@ -17,23 +17,36 @@ import { useQuery } from "@apollo/client";
 import { Suspense } from "react";
 
 export default function Home() {
-  const { data, loading:loadingBlog } = useQuery<IBlogData>(BLOG_FEATURED_QUERY);
+  const { data, loading: loadingBlog } =
+    useQuery<IBlogData>(BLOG_FEATURED_QUERY);
   const blogContents = data?.blogs || [];
 
-  const { data: work, loading: loadingProject } = useQuery<IProjectData>(PROJECT_QUERY);
+  const { data: work, loading: loadingProject } = useQuery<IProjectData>(
+    FEATURED_PROJECT_QUERY
+  );
 
-  const projects = work?.projects.slice(0, 6) || [];
+  const projects = work?.growthlobbyCaseStudies.slice(0, 6) || [];
+
+  console.log(work)
 
   return (
     <Suspense fallback={<div className="w-full h-screen bg-zinc-50 "></div>}>
       <HeroParallaxDemo />
       <WelcomeSection />
       <ServicesSection />
-      { loadingProject ? <div>Loading...</div> : <WorksSection projects={projects} />}
+      {loadingProject ? (
+        <div>Loading...</div>
+      ) : (
+        <WorksSection projects={projects} />
+      )}
       <SuccessPrev />
       <BrandCompany />
       <TestimonySection />
-      {loadingBlog ? <div>Loading...</div> : <BlogSection posts={blogContents} />}
+      {loadingBlog ? (
+        <div>Loading...</div>
+      ) : (
+        <BlogSection posts={blogContents} />
+      )}
       <FaqSection />
     </Suspense>
   );

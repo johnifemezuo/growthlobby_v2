@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 export const PROJECT_QUERY = gql`
   query {
-    projects {
+    growthlobbyCaseStudies {
       id
       title
       description
@@ -18,7 +18,7 @@ export const PROJECT_QUERY = gql`
 `;
 export const PROJECT_DETAIL_QUERY = gql`
     query getProject($slug: String) {
-    projects(where: { slug: $slug }) {
+    growthlobbyCaseStudies(where: { slug: $slug }) {
     id
     title
     description
@@ -41,7 +41,7 @@ export const PROJECT_DETAIL_QUERY = gql`
 
 export const OTHER_PROJECT_QUERY = gql`
   query getOtherProject($slug: String) {
-    projects(where: { slug_not_contains: $slug }, first: 3) {
+    growthlobbyCaseStudies(where: { slug_not_contains: $slug }, first: 3) {
       publishedAt
       id
       title
@@ -56,3 +56,23 @@ export const OTHER_PROJECT_QUERY = gql`
     }
   }
 `;
+
+
+export const FEATURED_PROJECT_QUERY = gql`
+  query {
+    growthlobbyCaseStudies(where: { featured: true }, first: 6) {
+      publishedAt
+      id
+      title
+      description
+      projectType
+      slug
+      livesite
+      platform
+      introImage {
+        url
+      }
+    }
+  }
+`;
+

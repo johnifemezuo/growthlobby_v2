@@ -14,15 +14,16 @@ import { Suspense } from "react";
 export default function ProjectDetailPage({ params }: any) {
   const projectId = params.projectId;
   const { data: projectData, loading: loadingProjects } = useQuery<{
-    projects: any;
+    growthlobbyCaseStudies: any[];
   }>(PROJECT_DETAIL_QUERY, { variables: { slug: projectId } });
-  const project = projectData?.projects[0] || [];
+  const project = projectData?.growthlobbyCaseStudies[0] || [];
 
   const { data: others, loading: loadingOthers } = useQuery<{
-    projects: any[];
+    growthlobbyCaseStudies: any[];
   }>(OTHER_PROJECT_QUERY, { variables: { slug: params.projectId } });
 
-  const otherProjects = others?.projects || [];
+  const otherProjects = others?.growthlobbyCaseStudies || [];
+  console.log(project);
 
   return (
     <Suspense fallback={<div className="w-full h-screen bg-zinc-50 "></div>}>
@@ -35,7 +36,7 @@ export default function ProjectDetailPage({ params }: any) {
       ) : (
         <div>
           <WorkDetailHeroSection
-            title={project?.title}
+            title={project?.title as string}
             description={project?.description}
             image={project?.introImage.url}
             livesite={project?.livesite}
