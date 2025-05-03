@@ -11,7 +11,7 @@ const ContactComp = () => {
         BOOK A CALL
       </Link>
       <Link
-        href="/pricing"
+        href="https://calendly.com/growthlobbyagency"
         className="flex border text-sm items-center justify-center gap-2 px-5 py-4 bg-zinc-200 rounded-md hover:bg-gray-100 transition-colors w-full sm:w-auto"
       >
         CONTACT US <ArrowRight />

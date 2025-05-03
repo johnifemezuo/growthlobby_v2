@@ -21,11 +21,6 @@ export default function BlogContents({
 
   const categories = getCategories(blogContents);
 
-  // const loadMore = () => {
-  //   setVisiblePosts((prevCount) => Math.min(prevCount + 4, blogs.length));
-  // };
-
-  // const [visiblePosts, setVisiblePosts] = useState<number>(8);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   const filteredBlogContents = activeCategory
@@ -36,12 +31,6 @@ export default function BlogContents({
   const featuredPosts = blogContents.filter((blog: IBlog) => blog.featured);
   const [firstFeatured, secondFeatured] = featuredPosts.slice(0, 2); // First two featured posts
   const thirdFeatured = featuredPosts[2];
-
-  // const [activeFilter, setActiveFilter] = useState("UI/UX DESIGNS");
-
-  // const filteredItems = projects.filter((item) =>
-  //   activeFilter === "UI/UX DESIGNS" ? true : item.category === activeFilter
-  // );
 
   return (
     <div className="py-6 lg:py-9 bg-white mx-auto px-4 space-y-8 lg:space-y-8">
@@ -117,7 +106,7 @@ export default function BlogContents({
             </div>
 
             <h1 className="text-2xl font-bold lg:text-4xl mb-8 text-zinc-700 border-t py-4 capitalize">
-              {activeCategory}
+              {activeCategory ?? "All Posts"}
             </h1>
 
             <div className="grid lg:grid-cols-2 gap-8 my-5 lg:my-8  ">

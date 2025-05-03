@@ -56,6 +56,8 @@ export const BLOG_DETAIL_QUERY = gql`
       slug
       category
       readTime
+      publishedAt
+
       author {
         name
         profilePic {
@@ -80,6 +82,7 @@ export const RELATED_BLOG_QUERY = gql`
       title
       slug
       category
+      publishedAt
       readTime
       author {
         name

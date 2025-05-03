@@ -3,6 +3,7 @@ import { PageContainer } from "@/components/Container/PageContainer";
 import Image from "next/image";
 
 const BlogDetailHero = ({details}:{details: IBlog}) => {
+  console.log(details)
   
   const formattedDate = new Date(details.publishedAt).toLocaleDateString('en-US', {
     year: 'numeric',
@@ -15,7 +16,7 @@ const BlogDetailHero = ({details}:{details: IBlog}) => {
       <PageContainer>
         <div className="h-full relative pt-28 pb-3  lg:pt-24 ">
           <div className="flex flex-col  z-30 justify-center h-auto   w-full space-y-6 lg:py-12">
-            <h1 className="text-2xl max-w-3xl font-bold lg:text-4xl xl:text-4xl capitalize text-zinc-800 ">
+            <h1 className="text-2xl text-center max-w-4xl mx-auto font-bold lg:text-4xl xl:text-4xl capitalize text-zinc-800 ">
               {details.title}
             </h1>
 
@@ -28,7 +29,8 @@ const BlogDetailHero = ({details}:{details: IBlog}) => {
                 </p>
               </div>
               <div className="flex space-x-4 ">
-                <Image alt="" src={details.author.profilePic.url} width={90} height={90} className="w-[50px] rounded-full object-cover h-[50px]" />
+                <Image alt={details.title
+                } src={details.author.profilePic.url} width={90} height={90} className="w-[50px] rounded-full object-cover h-[50px]" />
                 <div className="flex flex-col">
                   <h6 className="text-zinc-700 font-medium">{details.author.name}</h6>
                   <p className="text-zinc-500 text-sm">{details.author.role}</p>
