@@ -22,7 +22,7 @@ export const BlogInlineCard = ({
   return (
     <Link
             href={slug}>
-    <div className="flex flex-col space-y-4 bg-white border hover:shadow-lg transition-shadow duration-500 p-4 lg:p-6 rounded-xl ">
+    <div className="flex flex-col space-y-4 bg-white border hover:shadow-lg transition-shadow duration-500 p-3 lg:p-4 rounded-xl ">
       <div className="flex space-x-4 lg:space-x-8 items-center">
         <div className="w-28 h-[130px] md:w-28 md:h-20 flex-shrink-0 lg:w-[150px] rounded-xl lg:h-[160px]">
           <Image

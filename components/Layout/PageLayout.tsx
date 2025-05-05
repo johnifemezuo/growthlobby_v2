@@ -3,7 +3,6 @@
 
 import { usePathname } from "next/navigation"; // Use next/navigation hooks
 import { useEffect, useState } from "react";
-import Footer from "../UI/Footer/Footer";
 import Nav from "../UI/NavbarMain/Nav";
 
 export const PageLayout = ({ children }: { children?: React.ReactNode }) => {
@@ -63,10 +62,8 @@ export const PageLayout = ({ children }: { children?: React.ReactNode }) => {
         <div>
           <Nav />
           {children}
-          <Footer />
         </div>
       )}
     </div>
   );
 };
- 

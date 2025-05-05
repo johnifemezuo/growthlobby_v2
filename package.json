@@ -33,6 +33,9 @@
     "react-hot-toast": "^2.5.2",
     "react-icons": "^5.4.0",
     "resend": "^4.1.2",
+    "resize-observer-polyfill": "^1.5.1",
+    "smooth-scrollbar": "^8.8.4",
+    "smooth-scrollbar-react": "^2.4.1",
     "tailwind-merge": "^3.1.0"
   },
   "devDependencies": {

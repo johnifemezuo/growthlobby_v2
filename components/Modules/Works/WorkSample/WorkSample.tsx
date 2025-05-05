@@ -87,9 +87,9 @@ const WorksSection = ({ projects }: { projects: IProject[] }) => {
             </p>
           </div>
 
-          <p className="lg:text-base bg-zinc-100 inline-block mt-2 lg:mt-0 rounded-full px-3 py-1 text-sm font-medium">
+          {/* <p className="lg:text-base bg-zinc-100 inline-block mt-2 lg:mt-0 rounded-full  py-1 text-sm font-medium">
             Total {projects.length}
-          </p>
+          </p> */}
         </div>
 
         {filteredProjectContents.length > 0 ? (

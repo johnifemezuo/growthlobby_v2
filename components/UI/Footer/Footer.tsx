@@ -8,10 +8,10 @@ import { ScrollReveal } from "@/components/Animations/ScrollReveal";
 const Footer = () => {
   const menuItems = [
     { label: "Homepage", href: "/" },
-    { label: "About us", href: "/about" },
+    { label: "About us", href: "/about-us" },
     { label: "Services", href: "/#services" },
     { label: "Our Work", href: "/works" },
-    { label: "Client Stories", href: "/clients" },
+    { label: "Blog", href: "/blog" },
   ];
 
   return (
@@ -53,28 +53,28 @@ const Footer = () => {
                 className="text-black hover:text-blue-800"
                 aria-label="LinkedIn"
               >
-                <FaLinkedin />
+                <FaLinkedin size={24} />
               </Link>
               <Link
                 href="https://facebook.com"
                 className="text-black hover:text-blue-700"
                 aria-label="Facebook"
               >
-                <FaFacebook />
+                <FaFacebook size={24} />
               </Link>
               <Link
                 href="https://instagram.com"
                 className="text-black hover:text-pink-800"
                 aria-label="Instagram"
               >
-                <FaInstagram />
+                <FaInstagram size={24} />
               </Link>
               <Link
                 href="https://twitter.com"
                 className="text-black hover:text-blue-500"
                 aria-label="Twitter"
               >
-                <FaTwitter />
+                <FaTwitter size={24} />
               </Link>
             </div>
           </nav>

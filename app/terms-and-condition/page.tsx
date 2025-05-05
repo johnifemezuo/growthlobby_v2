@@ -2,8 +2,10 @@
 "use client";
 
 import { TERMS_QUERY } from "@/base/query/terms";
+import SmoothScroll from "@/components/Animations/SmoothScroll";
 import { PageContainer } from "@/components/Container/PageContainer";
 import TermsHeroSection from "@/components/Modules/Terms/TermsHerosection";
+import Footer from "@/components/UI/Footer/Footer";
 import { useQuery } from "@apollo/client";
 import parse from "html-react-parser";
 import { Suspense } from "react";
@@ -13,7 +15,8 @@ export default function TermsPage() {
   const content = data?.termsAndConditions[0] ?? {};
 
   return (
-      <Suspense fallback={<div className="w-full h-screen bg-zinc-50 "></div>}>
+    <Suspense fallback={<div className="w-full h-screen bg-zinc-50 "></div>}>
+      <SmoothScroll>
         {loading ? (
           <div className="w-full h-screen bg-zinc-50 ">Loading...</div>
         ) : (
@@ -25,6 +28,8 @@ export default function TermsPage() {
             </PageContainer>
           </div>
         )}
-      </Suspense>
+        <Footer />
+      </SmoothScroll>
+    </Suspense>
   );
 }

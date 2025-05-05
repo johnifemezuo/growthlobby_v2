@@ -3,7 +3,9 @@
 
 import { IBlogData } from "@/base/interface/IBlog";
 import { BLOG_DETAIL_QUERY, RELATED_BLOG_QUERY } from "@/base/query/blog";
+import SmoothScroll from "@/components/Animations/SmoothScroll";
 import { BlogDetailContent } from "@/components/Modules/BlogPage/BlogDetailContent";
+import Footer from "@/components/UI/Footer/Footer";
 import { useSuspenseQuery } from "@apollo/client";
 import Head from "next/head";
 import { Suspense, use } from "react";
@@ -32,7 +34,10 @@ export default function BlogDetailPage({ params }: any) {
         <title>Growthlobby | Blog | {blog.title} </title>
       </Head>
 
-      <BlogDetailContent details={blog} otherPosts={otherPosts} />
+      <SmoothScroll>
+        <BlogDetailContent details={blog} otherPosts={otherPosts} />
+        <Footer />
+      </SmoothScroll>
     </Suspense>
   );
 }

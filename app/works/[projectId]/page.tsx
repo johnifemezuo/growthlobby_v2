@@ -5,8 +5,10 @@ import {
   OTHER_PROJECT_QUERY,
   PROJECT_DETAIL_QUERY,
 } from "@/base/query/project";
+import SmoothScroll from "@/components/Animations/SmoothScroll";
 import { ProjectDetails } from "@/components/Modules/Works/ProjectDetails";
 import WorkDetailHeroSection from "@/components/Modules/Works/WorkHeroSection/WorkDetailHeroSection";
+import Footer from "@/components/UI/Footer/Footer";
 import { useQuery } from "@apollo/client";
 import Head from "next/head";
 import { Suspense } from "react";
@@ -31,27 +33,31 @@ export default function ProjectDetailPage({ params }: any) {
         <title>Osmaxin | Works | </title>
       </Head>
 
-      {loadingProjects || loadingOthers ? (
-        <div>Loading...</div>
-      ) : (
-        <div>
-          <WorkDetailHeroSection
-            title={project?.title as string}
-            description={project?.description}
-            image={project?.introImage.url}
-            livesite={project?.livesite}
-            industry={project?.industry}
-            platform={project?.platform}
-            timeline={project?.timeline}
-            year={project?.year}
-          />
+      <SmoothScroll>
+        {loadingProjects || loadingOthers ? (
+          <div>Loading...</div>
+        ) : (
+          <div>
+            <WorkDetailHeroSection
+              title={project?.title as string}
+              description={project?.description}
+              image={project?.introImage.url}
+              livesite={project?.livesite}
+              industry={project?.industry}
+              platform={project?.platform}
+              timeline={project?.timeline}
+              year={project?.year}
+            />
 
-          <ProjectDetails
-            details={project?.content}
-            otherProjects={otherProjects}
-          />
-        </div>
-      )}
+            <ProjectDetails
+              details={project?.content}
+              otherProjects={otherProjects}
+            />
+          </div>
+        )}
+
+        <Footer />
+      </SmoothScroll>
     </Suspense>
   );
 }

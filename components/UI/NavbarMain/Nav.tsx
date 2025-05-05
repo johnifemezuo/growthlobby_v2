@@ -10,6 +10,13 @@ export default function Nav() {
   const [openContactForm, setOpenContactForm] = useState(false);
   const pathname = usePathname();
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div
       id="top"
@@ -35,6 +42,10 @@ export default function Nav() {
         <div className="hidden md:flex md:items-center md:space-x-6 pl-6 pr-2 py-2 md:border  rounded-xl bg-white backdrop-blur-md">
           <Link
             href="/#services"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("services");
+            }}
             className={`  text-white lg:text-sm font-medium hover:text-primary transition-all ${
               pathname === "/#services" ? "text-[var(--primaryActive)] font-semibold" : "text-zinc-800"
             }`}
@@ -115,11 +126,15 @@ export default function Nav() {
             >
               <div className="flex flex-col space-y-4">
                 <Link
-                  href="#services"
+                  href="/#services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("services");
+                    setIsOpen(false)
+                  }}
                   className={` text-2xl py-2 hover:text-primary transition-all ${
                     pathname === "/#services" ? "text-primaryActive" : "text-zinc-800"
                   }`}
-                  onClick={() => setIsOpen(false)}
                 >
                   Services
                 </Link>
