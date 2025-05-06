@@ -3,6 +3,7 @@ import { PageLayout } from "@/components/Layout/PageLayout";
 import type { Metadata } from "next";
 import { Wix_Madefor_Display } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 const wixMadefor = Wix_Madefor_Display({
   subsets: ["latin"],
@@ -41,6 +42,7 @@ export default function RootLayout({
       <body className={` ${wixMadefor.variable}  antialiased`}>
         <PageLayout>
           <ApolloWrapper>{children}</ApolloWrapper>
+          <Toaster />
         </PageLayout>
       </body>
     </html>

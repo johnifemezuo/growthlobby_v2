@@ -1,8 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
+import emailjs from "@emailjs/browser";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { Button } from "../Button/Button";
+import { formValidatorSchema } from "./formValidatorSchema";
 
 export default function ContactFormDropDown({
   isOpen,
@@ -34,6 +40,59 @@ export default function ContactFormDropDown({
     return () => clearInterval(interval);
   }, []);
 
+  const [loading, setLoading] = useState(false);
+  const form = useRef<any>(null);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(formValidatorSchema) });
+
+  const submitForm = (data: any, e: any) => {
+    // const payload = {
+    //   fullName: data.fullName,
+    //   message: data.message,
+    //   email: data.email,
+    //   phone: data.phone,
+    // };
+
+    setLoading(true);
+
+    emailjs
+      .sendForm(
+        "service_zu744ow",
+        "template_0kmxem6",
+        form.current,
+        "ZkjLAdZ9iCUH0F4mI"
+      )
+      .then(
+        (result) => {
+          console.log(form.current);
+          console.log(result.text);
+          e.target.reset();
+          toast.success(
+            `Success!! Thanks, The team will get back to you Asap `,
+            {
+              duration: 5000,
+              position: "top-center",
+              className: "text-sm md:text-base",
+            }
+          );
+          setLoading(false);
+        },
+        (error) => {
+          setLoading(false);
+          console.log(errors);
+          console.log(error);
+          toast.error("Sorry, something is wrong", {
+            duration: 4000,
+            position: "bottom-center",
+          });
+        }
+      );
+  };
+
   return (
     <main
       className={`fixed inset-0 z-50 flex items-start justify-center transition-all duration-500 ease-in-out ${
@@ -52,7 +111,7 @@ export default function ContactFormDropDown({
       <div className="relative z-30">
         <div className="w-full h-auto max-w-7xl  relative flex flex-col md:flex-row lg:mt-20">
           {/* Left side with time and branding */}
-          <div  className="w-full  md:w-1/2 pb-6 lg:p-8 md:p-16 flex flex-col justify-center">
+          <div className="w-full  md:w-1/2 pb-6 lg:p-8 md:p-16 flex flex-col justify-center">
             <div className="text-white">
               <p className="uppercase lg:text-xl">Nigeria</p>
               <div className="text-4xl lg:text-[180px] md:text-[220px] font-light leading-none tracking-tighter">
@@ -74,17 +133,30 @@ export default function ContactFormDropDown({
 
           {/* Right side with form */}
           <div className="w-full md:w-1/2 bg-white lg:h-auto lg:mt- rounded-3xl p-5 md:p-12 relative">
-            <h2 className="text-2xl lg:text-3xl font-bold mb-5 lg:mb-8">Fill The Form</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold mb-5 lg:mb-8">
+              Fill The Form
+            </h2>
 
-            <form className="space-y-4 lg:space-y-6">
+            <form
+              ref={form}
+              onSubmit={handleSubmit(submitForm)}
+              className="space-y-4 lg:space-y-6"
+            >
               <input
                 type="text"
                 placeholder="Your name"
+                {...register("fullName", {
+                  required: "Please add a name",
+                  minLength: 4,
+                })}
                 className="bg-gray-100 w-full border-0 rounded-full px-6 py-4 h-auto text-lg"
               />
 
               <input
                 type="tel"
+                {...register("phone", {
+                  required: "phone is required, Thank you",
+                })}
                 placeholder="Your phone"
                 className="bg-gray-100 w-full outline-none border-0 rounded-full px-6 py-4 h-auto text-lg"
               />
@@ -92,10 +164,13 @@ export default function ContactFormDropDown({
               <input
                 type="email"
                 placeholder="Email"
+                {...register("email", {
+                  required: "email is required, Thank you",
+                })}
                 className="bg-gray-100 border-0 w-full rounded-full px-6 py-4 h-auto text-lg"
               />
 
-              <div className="flex flex-wrap gap-2 w-full">
+              {/* <div className="flex flex-wrap gap-2 w-full">
                 {[
                   "Branding",
                   "UI/UX Design",
@@ -106,29 +181,33 @@ export default function ContactFormDropDown({
                 ].map((service) => (
                   <div
                     key={service}
-                    className="bg-gray-100 px-4 py-2 rounded-full text-sm cursor-pointer hover:bg-gray-200"
+                    onClick={() => setSelectedItem(service)}
+                    className={`bg-gray-100 px-4 py-2 rounded-full text-sm cursor-pointer  ${selectedItem === service ? "bg-[#c4ee1e] text-black" : "hover:bg-gray-200"} `}
                   >
                     {service}
                   </div>
                 ))}
-              </div>
+              </div> */}
 
               <textarea
                 placeholder="Project Details"
-                className="bg-gray-100 w-full border-0 rounded-3xl px-6 py-4 min-h-[100px] text-lg"
+                className="bg-gray-100 w-full border-0 rounded-3xl px-6 py-4 min-h-[140px] text-lg"
+                {...register("message", {
+                  required: "Leave a message, Thank you",
+                })}
               />
 
               <div className="lg:flex justify-between items-center">
                 <Button
-                  onClick={() => {}}
-                  className="bg-[var(--primary)] hover:bg-[var(--primary)] w-full lg:min-w-[130px]  text-black hover:bg-[var(--primary)]/50 font-medium px-12 py-3 h-auto text-xl "
+                  disabled={loading}
+                  className="bg-[var(--primary)] min-w-[200px] w-full lg:max-w-[100px]  text-black hover:bg-[var(--primary)]/50 font-medium px-12 py-3 h-auto text-xl "
                 >
-                  Send
+                  {loading ? "Loading..." : "Submit"}
                 </Button>
 
                 <div className="text-right mt-3 lg:mt-0">
                   <div className="text-sm text-gray-500">Email us here:</div>
-                  <div className="font-medium">partner@growthlobby.com</div>
+                  <div className="font-medium">growthlobby@gmail.com</div>
                 </div>
               </div>
             </form>
