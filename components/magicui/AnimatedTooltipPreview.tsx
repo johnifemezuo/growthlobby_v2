@@ -3,13 +3,6 @@ import React from "react";
 import { AnimatedTooltip } from "../UI/AnimatedTooltip";
 const people = [
   {
-    id: 1,
-    name: "John",
-    designation: "UI Engineer",
-    image:
-      "/images/t5.png",
-  },
-  {
     id: 2,
     name: "Panda Johnson",
     designation: "Graphics Designer",
@@ -39,11 +32,18 @@ const people = [
   },
   {
     id: 6,
-    name: "Chiamaka",
-    designation: "Illustrator",
+    name: "Johnbosco",
+    designation: "Content Strategist  ",
     image:
-      "/images/t1.png",
+    "/images/bosco.jpg",
   },
+  {
+    id: 1,
+    name: "John",
+    designation: "UI Engineer",
+    image:
+      "/images/t5.png",
+  }
 ];
 
 export function AnimatedTooltipPreview() {
