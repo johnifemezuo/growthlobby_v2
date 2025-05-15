@@ -3,7 +3,7 @@ import { ArrowRight } from "../Icons/ArrowRight";
 
 const ContactComp = () => {
   return (
-    <div className="flex min-w-[350px] lg:min-w-[300px] lg:w-auto bg-white border border-zinc-200 p-1  rounded-lg flex-row items-center justify-between lg:justify-center gap-2 mt-8">
+    <div className="flex z-20 min-w-[350px] lg:min-w-[300px] lg:w-auto bg-white border border-zinc-200 p-1  rounded-lg flex-row items-center justify-between lg:justify-center gap-2 mt-8">
       <Link
         href="/book"
         className="bg-gray-900 text-center text-white px-6 text-sm py-4 rounded-md hover:bg-black transition-colors w-full sm:w-auto"
