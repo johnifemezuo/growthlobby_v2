@@ -50,13 +50,6 @@ export default function ContactFormDropDown({
   } = useForm({ resolver: yupResolver(formValidatorSchema) });
 
   const submitForm = (data: any, e: any) => {
-    // const payload = {
-    //   fullName: data.fullName,
-    //   message: data.message,
-    //   email: data.email,
-    //   phone: data.phone,
-    // };
-
     setLoading(true);
 
     emailjs

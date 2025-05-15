@@ -1,11 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
+import { useModal } from "@/base/hooks/useModal";
 import { IBlogData } from "@/base/interface/IBlog";
 import { IProjectData } from "@/base/interface/IProject";
 import { BLOG_FEATURED_QUERY } from "@/base/query/blog";
 import { FEATURED_PROJECT_QUERY } from "@/base/query/project";
 import SmoothScroll from "@/components/Animations/SmoothScroll";
+import MarketingModal from "@/components/Modals/MarketingModal";
 import BlogSection from "@/components/Modules/Home/BlogSection/BlogSection";
 import BrandCompany from "@/components/Modules/Home/BrandCompany/BrandCompany";
 import FaqSection from "@/components/Modules/Home/FaqSection/FaqSection";
@@ -30,6 +32,8 @@ export default function Home() {
 
   const projects = work?.growthlobbyCaseStudies.slice(0, 6) || [];
 
+  const { isModalOpen, closeModal } = useModal();
+
   return (
     <Suspense fallback={<div className="w-full h-screen bg-zinc-50 "></div>}>
       <SmoothScroll>
@@ -52,6 +56,12 @@ export default function Home() {
         <FaqSection />
         <Footer />
       </SmoothScroll>
+
+      {/* Modal */}
+      <MarketingModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
     </Suspense>
   );
 }

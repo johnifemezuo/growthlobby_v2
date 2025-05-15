@@ -14,7 +14,7 @@ export const Button = ({
   return (
     <button
       onClick={onClick}
-      className={`${className} space-x-4 py-2 px-4 flex justify-items-center  items-center rounded-lg justify-center hover:bg-primary/40 text-black`}
+      className={`${className} space-x-4 py-2 px-4 flex justify-items-center  items-center rounded-lg justify-center  text-black`}
       {...props} // Spread native button properties here
     >
       <span className="pl-2 lg:text-lg ">{children}</span>
