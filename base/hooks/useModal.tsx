@@ -7,7 +7,8 @@ export const useModal = () => {
         // Check if the modal has already been shown and if the time has expired
         const modalLastShown = localStorage.getItem("modalLastShown");
         const currentTime = new Date().getTime();
-        const expirationTime = 12 * 60 * 60 * 1000; // 12 hours in milliseconds
+        const expirationTime = 1 * 60 * 60 * 1000; // 12 hours in milliseconds
+
         if (!modalLastShown || currentTime - parseInt(modalLastShown, 10) > expirationTime) {
           // Show the modal after 10 seconds
           const timer = setTimeout(() => {

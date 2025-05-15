@@ -9,16 +9,18 @@ interface ModalProps {
 }
 
 const MarketingModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
+  // if (!isOpen) return null;
   const { push } = useRouter();
   const handleDownload = () => {
     push("/resources/political-branding-strategy");
   };
   
-  if (!isOpen) return null;
+
+  console.log(isOpen)
 
 
   return (
-    <div className="fixed  bg-white/20 inset-0  flex justify-center items-center z-50">
+    <div className={`${isOpen ? "display" : "hidden"} fixed  bg-white/20 inset-0  flex justify-center items-center z-50`}>
       <div className="sm:flex w-[360px] bg-white lg:h-[600px] lg:w-[1000px] md:w-[700px]">
         <div className="bg-[#b6d337] relative p-6 items-baseline  w-full lg:p-12 shadow-lg max-w-md lg:w-full space-y-4 grid">
           <button
