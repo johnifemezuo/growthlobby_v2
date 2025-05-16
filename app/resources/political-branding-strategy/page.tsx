@@ -14,15 +14,15 @@ const HYGRAPH_TOKEN = process.env.NEXT_PUBLIC_HYGRAPH_TOKEN;
 export default function ResourcePage() {
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [number, setNumber] = useState("");
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setLoading(true);
 
     const query = `
-      mutation CreateLead($name: String!, $email: String!) {
-        createLead(data: { name: $name, email: $email }) {
+      mutation CreateLead($name: String!, $number: String!) {
+        createLead(data: { name: $name, number: $number }) {
           id
         }
       }
@@ -30,7 +30,7 @@ export default function ResourcePage() {
 
     const variables = {
       name,
-      email,
+      number,
     };
 
     try {
@@ -55,9 +55,9 @@ export default function ResourcePage() {
           className: "text-sm md:text-base",
         });
         setName("");
-        setEmail("");
+        setNumber("");
 
-         // Trigger PDF download
+        // Trigger PDF download
         const link = document.createElement("a");
         link.href = "/resources/branding-like-a-pro.pdf"; // Path to the PDF file
         link.download = "file.pdf"; // Suggested file name for download
@@ -111,11 +111,12 @@ export default function ResourcePage() {
                 />
 
                 <input
-                  type="email"
-                  placeholder="Email"
+                  type="tel"
+                  placeholder="Phone Number"
                   required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  pattern="[0-9]{10,15}"
+                  value={number}
+                  onChange={(e) => setNumber(e.target.value.replace(/\D/, ""))}
                   className="bg-gray-100 border-0 w-full rounded-full px-6 py-4 h-auto text-lg"
                 />
 
@@ -133,8 +134,6 @@ export default function ResourcePage() {
                   </div>
                 </div>
               </form>
-
-            
             </div>
           </div>
         </div>

@@ -10,14 +10,13 @@ interface ModalProps {
 
 const MarketingModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   // if (!isOpen) return null;
+
+  
   const { push } = useRouter();
   const handleDownload = () => {
     push("/resources/political-branding-strategy");
   };
   
-
-  console.log(isOpen)
-
 
   return (
     <div className={`${isOpen ? "display" : "hidden"} fixed  bg-white/20 inset-0  flex justify-center items-center z-50`}>
