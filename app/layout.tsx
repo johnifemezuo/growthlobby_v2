@@ -36,7 +36,7 @@ export default function RootLayout({
           content="web design, development, agency, design agency, Nigeria"
         />
         <meta name="author" content="John Ifemezuo" />
-        <meta property="og:description" content="Your web design partner" />
+        <meta property="og:description" content="Your web design partne r" />
         <meta property="og:image" content="/images/logo1.png" />
         <meta property="og:url" content="https://growthlobby.com" />
       </head>
