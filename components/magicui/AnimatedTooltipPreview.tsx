@@ -35,7 +35,7 @@ const people = [
     name: "Johnbosco",
     designation: "Content Strategist  ",
     image:
-    "/images/bosco.jpg",
+    "/images/bonsco.jpeg",
   },
   {
     id: 1,
